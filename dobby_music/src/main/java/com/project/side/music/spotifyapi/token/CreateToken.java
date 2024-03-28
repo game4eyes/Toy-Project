@@ -27,5 +27,9 @@ public class CreateToken {
             System.out.println("Error: " + e.getMessage());
             return "error";
         }
+
+    }
+    public static void main(String[] args) {
+        System.out.println(accesstoken());
     }
 }
