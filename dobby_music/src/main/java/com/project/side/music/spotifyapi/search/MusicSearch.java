@@ -1,14 +1,15 @@
 package com.project.side.music.spotifyapi.search;
 
+import com.project.side.music.spotifyapi.token.CreateToken;
 import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;
 
 public class MusicSearch {
-    public String search(String accessToken, String q){ //q는 검색어
+    public static String search(String accessToken, String q){ //q는 검색어
 
         RestTemplate rest = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Authorization", "Bearer " + accessToken);;
+        headers.add("Authorization", "Bearer " + accessToken);
         headers.add("Host", "api.spotify.com");
         headers.add("Content-type", "application/json");
         String body = "";
