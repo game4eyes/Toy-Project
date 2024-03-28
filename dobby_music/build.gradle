@@ -27,10 +27,17 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    implementation 'com.github.thelinmichael:spotify-web-api-java:master-SNAPSHOT'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+dependencies{
+    implementation 'com.github.thelinmichael:spotify-web-api-java:master-SNAPSHOT'
+}
+
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
 }
