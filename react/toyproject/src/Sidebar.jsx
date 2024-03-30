@@ -9,7 +9,7 @@ import { LuLibrary } from "react-icons/lu";
 import { FaRegBell } from "react-icons/fa6";
 import { GoPlus } from "react-icons/go";
 import Header from './Header';
-import Navigation from './page/Nav';
+import Navigation from './component/Nav';
 
 function Sidebar() {
   const [showSidebar, setShowSidebar] = useState(false);
