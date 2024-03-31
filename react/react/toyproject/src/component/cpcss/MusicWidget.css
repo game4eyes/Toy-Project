@@ -1,0 +1,49 @@
+.music-widget-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 72px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    color: #fff;
+  }
+  
+  .widget-title {
+    margin: 0;
+  }
+  
+  .play-pause-button {
+    
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+    border: 2px solid transparent; /* 초기에는 투명한 테두리 */
+    
+    position: absolute;
+    top: 5%;
+    left: 50%;
+
+    /* 호버 효과 */
+    transition: all 0.3s ease; /* 모든 속성에 대해 0.3초 동안 변화 적용 */
+  }
+  
+  /* 호버 효과 */
+  .play-pause-button:hover {
+    border-color: #81b71a; /* 호버 시 테두리 색상 변경 */
+    transform: scale(1.1); /* 호버 시 크기 살짝 커지도록 */
+  }
+  
+  .play-pause-button.playing {
+    background-color: black; /* 재생 중일 때 버튼 색상 변경 */
+  }
+  
+  /* 마우스 클릭 시 크기 변화 */
+  .play-pause-button:active {
+    transform: scale(0.9); /* 클릭 시 크기가 조금 작아지도록 */
+  }
