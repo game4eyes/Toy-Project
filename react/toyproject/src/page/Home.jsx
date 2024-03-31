@@ -1,6 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
-<<<<<<< HEAD:react/toyproject/src/page/Home.jsx
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Routes 추가
 import Footer from './Footer';
 import './css/Home.css';
@@ -257,19 +255,6 @@ function Home() {
       <Footer/>
     </div>
    
-=======
-=======
->>>>>>> main
-
-function Home() {
-  return (
-    <div style={{ backgroundColor: 'black', height: '100vh', width:'100vh'}} className='home-background'>
-      홈
-    </div>
-<<<<<<< HEAD
->>>>>>> main:react/react/toyproject/src/page/Home.jsx
-=======
->>>>>>> main
   );
 }
 

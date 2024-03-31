@@ -9,15 +9,7 @@ import { LuLibrary } from "react-icons/lu";
 import { FaRegBell } from "react-icons/fa6";
 import { GoPlus } from "react-icons/go";
 import Header from './Header';
-<<<<<<< HEAD
-<<<<<<< HEAD:react/toyproject/src/Sidebar.jsx
 import Navigation from './component/Nav';
-=======
-import Navigation from './page/Nav';
->>>>>>> main:react/react/toyproject/src/Sidebar.jsx
-=======
-import Navigation from './page/Nav';
->>>>>>> main
 
 function Sidebar() {
   const [showSidebar, setShowSidebar] = useState(false);

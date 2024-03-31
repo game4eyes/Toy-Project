@@ -1,14 +1,6 @@
 import React, { useState } from 'react';
-<<<<<<< HEAD
-<<<<<<< HEAD:react/toyproject/src/Header.jsx
 import { useNavigate } from 'react-router-dom';
 import './page/css/Header.css'; // Header 스타일 import
-=======
-import './css/Header.css'; // Header 스타일 import
->>>>>>> main:react/react/toyproject/src/Header.jsx
-=======
-import './css/Header.css'; // Header 스타일 import
->>>>>>> main
 import { FaSpotify } from "react-icons/fa6";
 import { AiFillRightSquare } from "react-icons/ai";
 import { AiFillLeftSquare } from "react-icons/ai";
@@ -16,19 +8,11 @@ import { AiFillLeftSquare } from "react-icons/ai";
 function Header({ toggleSidebar }) {
   // 사용자 로그인 상태를 추적하는 state 설정
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-<<<<<<< HEAD
-<<<<<<< HEAD:react/toyproject/src/Header.jsx
   const navigate = useNavigate();
-=======
->>>>>>> main:react/react/toyproject/src/Header.jsx
-=======
->>>>>>> main
 
   // 로그인 상태 변경 함수
   const toggleLogin = () => {
     setIsLoggedIn(!isLoggedIn);
-<<<<<<< HEAD
-<<<<<<< HEAD:react/toyproject/src/Header.jsx
    
   };
 
@@ -41,19 +25,6 @@ function Header({ toggleSidebar }) {
       // 아직 로그인되지 않은 상태라면 가입 페이지로 이동
       navigate('/Signup');
     }
-=======
-=======
->>>>>>> main
-  };
-
-  // 페이지 이동 핸들러 (임의로 추가한 예시)
-  const handlePageNavigation = () => {
-    // 페이지 이동 로직을 작성하거나, 다른 동작을 수행할 수 있음
-    console.log('페이지 이동!');
-<<<<<<< HEAD
->>>>>>> main:react/react/toyproject/src/Header.jsx
-=======
->>>>>>> main
   };
 
   // 토글 아이콘 클릭 시 사이드바를 열도록 핸들러 추가
