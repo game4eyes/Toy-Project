@@ -28,12 +28,12 @@ function Footer() {
            
             <div className='footer-info'>
                 {/* 추가적인 내용이 있다면 여기에 추가 */}
-                @bonobono @kejangcon @당근 @살려줘 2024 spotify api
+                @bonobono @kejangcon @당근 @명준님이거고쳐줘 2024 spotify api
             </div>
             <div className='footer-icon'>
                 <CiTwitter size={28}/>
                 <FaInstagram size={28}/>
-                <PiPersonSimpleRunBold size={28}/>
+                <PiPersonSimpleRunBold size={28}/>ㅌㅌ
             </div> 
         </div>
     );

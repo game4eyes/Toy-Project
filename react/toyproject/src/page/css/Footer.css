@@ -1,5 +1,4 @@
 .footer-container {
-    position: fixed; /* 고정 위치 설정 */
     bottom: 0; /* 아래쪽에 위치하도록 설정 */
     left: 0;
     width: 100%; /* 전체 너비로 설정 */
