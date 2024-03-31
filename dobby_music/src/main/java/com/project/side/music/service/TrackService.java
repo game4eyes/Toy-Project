@@ -38,11 +38,21 @@ public class TrackService {
                 pagingMap.put(seq,trackPaging1.getItems());
                 seq++;
             }
-            System.out.println("Total: " + trackPaging.getTotal());
         } catch (IOException | SpotifyWebApiException | ParseException e) {
             System.out.println("Error: " + e.getMessage());
         }
         return pagingMap.get(k);
+    }
+    public static Integer trackTotal_Sync(String q) {
+        searchTracksRequest = spotifyApi.searchTracks(q).market(CountryCode.KR).build();
+        Paging<Track> trackPaging = null;
+        try {
+            trackPaging = searchTracksRequest.execute();
+
+        }  catch (IOException | SpotifyWebApiException | ParseException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        return trackPaging.getTotal();
     }
 
 }
