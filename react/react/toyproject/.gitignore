@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 <<<<<<< HEAD:react/toyproject/.gitignore
 =======
+=======
+<<<<<<<< HEAD:react/toyproject/.gitignore
+========
+>>>>>>> main
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -20,7 +25,11 @@
 .env.test.local
 .env.production.local
 
+<<<<<<< HEAD
 >>>>>>> main:react/react/toyproject/.gitignore
+=======
+>>>>>>>> main:react/react/toyproject/.gitignore
+>>>>>>> main
 # Logs
 logs
 *.log

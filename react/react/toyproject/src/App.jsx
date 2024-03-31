@@ -6,6 +6,7 @@ import Sidebar from './Sidebar'; // Sidebar 컴포넌트 import
 import Mypage from './page/Mypage'; // 예시로 만든 Home 컴포넌트 import
 import AlarmList from './page/AlarmList'; // 예시로 만든 About 컴포넌트 import
 import Home from './page/Home';
+<<<<<<< HEAD
 <<<<<<< HEAD:react/toyproject/src/App.jsx
 import Navigation from './component/Nav';
 import Signup from './page/Signup';
@@ -13,6 +14,9 @@ import Signup from './page/Signup';
 =======
 import Navigation from './page/Nav';
 >>>>>>> main:react/react/toyproject/src/App.jsx
+=======
+import Navigation from './page/Nav';
+>>>>>>> main
 
 function App() {
   return (
@@ -27,6 +31,7 @@ function App() {
             </>
           }
         >
+<<<<<<< HEAD
 <<<<<<< HEAD:react/toyproject/src/App.jsx
           <Route index element={<Home />} /> {/* 홈 페이지 라우팅 */}
           <Route path="/Mypage" element={<Mypage />} /> {/* 마이페이지 라우팅 */}
@@ -37,6 +42,11 @@ function App() {
           <Route path="/Mypage" element={<Mypage />} /> {/* 마이페이지 라우팅 */}
           <Route path="/AlarmList" element={<AlarmList />} /> {/* 마이페이지 라우팅 */}
 >>>>>>> main:react/react/toyproject/src/App.jsx
+=======
+          <Route path="/" element={<Home />} /> {/* 홈 페이지 라우팅 */}
+          <Route path="/Mypage" element={<Mypage />} /> {/* 마이페이지 라우팅 */}
+          <Route path="/AlarmList" element={<AlarmList />} /> {/* 마이페이지 라우팅 */}
+>>>>>>> main
         </Route>
       </Routes>
     </Router>
