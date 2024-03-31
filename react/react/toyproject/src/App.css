@@ -1,9 +1,0 @@
-#root {
-  width: 100%;
-  height: 100vh; /* 뷰포트 높이의 100% */
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: left;
-  position: relative; /* 상대적 위치 지정 */
-}
