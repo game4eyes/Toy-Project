@@ -8,7 +8,7 @@ import AlarmList from './page/AlarmList'; // 예시로 만든 About 컴포넌트
 import Home from './page/Home';
 import Navigation from './component/Nav';
 import Signup from './page/Signup';
-
+import MusicDetail from './page/MusicDetail';
 
 function App() {
   return (
@@ -27,6 +27,7 @@ function App() {
           <Route path="/Mypage" element={<Mypage />} /> {/* 마이페이지 라우팅 */}
           <Route path="/AlarmList" element={<AlarmList />} /> {/* 알림온거 목록 경로 */}
           <Route path="/Signup" element={<Signup />} /> {/* 회원가입페이지 경로 */}
+          <Route path="/MusicDetail" element={<MusicDetail />} />{/* 뮤직 디테일 경로*/}
         </Route>
       </Routes>
     </Router>

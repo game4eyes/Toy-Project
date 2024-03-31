@@ -2,8 +2,16 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Routes 추가
 import Footer from './Footer';
 import './css/Home.css';
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
+
+  const navigate = useNavigate();
+
+  const MoveToDetail = () => {
+    navigate('/MusicDetail')
+  };
+
   return (
     
     <div className='home-background'>
@@ -17,7 +25,7 @@ function Home() {
       홈 페이지 홈페이지 홈페이지 홈홈홈홈홈홈홈
       홈 페이지 홈페이지 홈페이지 홈홈홈홈홈홈홈
       홈 페이지 홈페이지 홈페이지 홈홈홈홈홈홈홈
-      홈 페이지 홈페이지 홈페이지 홈홈홈홈홈홈홈
+      <a onClick={MoveToDetail}></a>
       홈 페이지 홈페이지 홈페이지 홈홈홈홈홈홈홈
       홈 페이지 홈페이지 홈페이지 홈홈홈홈홈홈홈
       홈 페이지 홈페이지 홈페이지 홈홈홈홈홈홈홈
