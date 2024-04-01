@@ -1,28 +1,44 @@
 .musicDetailContainer {
-    background-color: #121212; /* Spotify 어두운 배경 */
-    color: #fff; /* 흰색 텍스트 */
-    padding: 20px;
-    max-width: 300px;
-    border-radius: 8px;
-  }
-  
-  .trackTitle {
-    font-size: 24px;
-    margin-bottom: 8px;
-  }
-  
-  .artistName {
-    font-size: 18px;
-    color: #b3b3b3; /* 강조를 덜한 회색 */
-    margin-bottom: 16px;
-  }
-  
-  .playButton {
-    background-color: #1db954; /* Spotify 녹색 */
-    color: #fff; /* 흰색 텍스트 */
-    padding: 10px 20px;
-    border-radius: 20px;
-    text-align: center;
-    cursor: pointer;
-  }
-  
+  background-color: #121212; /* Spotify 어두운 배경 */
+  color: #fff; /* 흰색 텍스트 */
+  padding: 20px;
+  max-width: 300px;
+  border-radius: 8px;
+}
+
+.trackTitle {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.artistName {
+  font-size: 18px;
+  color: #b3b3b3; /* 강조를 덜한 회색 */
+  margin-bottom: 16px;
+}
+
+.playButton {
+  background-color: #1db954; /* Spotify 녹색 */
+  color: #fff; /* 흰색 텍스트 */
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.trackList {
+  margin-bottom: 16px;
+}
+
+.trackItem {
+  margin-bottom: 8px;
+}
+
+.trackName {
+  font-size: 16px;
+}
+
+.trackDuration {
+  font-size: 16px;
+  color: #b3b3b3; /* 강조를 덜한 회색 */
+}
