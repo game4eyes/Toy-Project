@@ -5,6 +5,7 @@ import './css/MusicDetail.css';
 const albumData = {
     albumTitle: "Wilting",
     artistName: "Glass Trio",
+    albumArtwork : "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMDdfMjI4%2FMDAxNjk2NjU2OTc4Mjgx.s2zWHG_JN809P57nWRqxNyxkwFz0Ww3qKSDCSy184rMg.CbWKYjL1vT86sYS74lMmkMzibSUeZDH0JnM12zCa-k0g.JPEG.mlb2k9%2Fqq.jpg&type=sc960_832",
     tracks: [
       { name: "Thank God It's Friday", duration: "3:53" },
       { name: "I Can Always Tell", duration: "3:23" },
@@ -15,9 +16,21 @@ const albumData = {
 
 function MusicDetail(){
     return(
-
         <div className="musicDetailContainer">
-        <h2 className="trackTitle">{albumData.albumTitle}</h2>
+        
+          <div clssName="albumArtworkContainer">
+            <img src="{albumData.albumArtwork}" alt="앨범 아트워크"
+            className="albumArtwork" />
+          </div>
+          <div className="categoryContainer">
+            <span>곡</span>
+          </div>
+          <div clssName="trackTitleContainer">
+            <h1 className="trackTitle">{albumData.albumTitle}</h1>
+          </div>
+          <div clssName="restDetail">
+            <a className="artistName">{albumData.artistName}</a>
+          </div>
         <p className="artistName">{albumData.artistName}</p>
         <div className="trackList">
         {albumData.tracks.map((track, index) => (
