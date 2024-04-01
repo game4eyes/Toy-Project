@@ -9,6 +9,7 @@ import Home from './page/Home';
 import Navigation from './component/Nav';
 import Signup from './page/Signup';
 import MusicDetail from './page/MusicDetail';
+import LoginPage from './LoginPage';  // 로그인 페이지 추가합니다 (04/01)
 
 function App() {
   return (
