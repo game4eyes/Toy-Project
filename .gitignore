@@ -94,3 +94,6 @@ local.properties
 *.iml
 out
 gen
+
+# VSCode
+.vscode
