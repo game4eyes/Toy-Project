@@ -21,7 +21,9 @@ function Home() {
 
   const sectionsData = [
     // 임시배열 컴포넌트로 바꿀 예정
-    { id: 1, title: '인기아티스트', viewAllLink: '/PopularArtists'},
+    { id: 1, title: '인기아티스트', viewAllLink: '/PopularArtists', viewAllText: '모두보기' },
+    { id: 2, title: '신규아티스트', viewAllLink: '/NewArtists', viewAllText: '모두보기' },
+    { id: 3, title: '인디아티스트', viewAllLink: '/IndieArtists', viewAllText: '모두보기' }
   ];
 
   const articlesData = [
@@ -37,7 +39,7 @@ function Home() {
             <div>
               <h2>
                 <Link to={section.viewAllLink}>{section.title}</Link>
-                <Link to={section.viewAllLink} id="aaa">모두보기</Link>
+                <Link to={section.viewAllLink} id="aaa">{section.viewAllText}</Link>
               </h2>
             </div>
           </div>
