@@ -19,7 +19,7 @@ function MusicDetail(){
         <div className="musicDetailContainer">
         
           <div clssName="albumArtworkContainer">
-            <img src="{albumData.albumArtwork}" alt="앨범 아트워크"
+            <img src={albumData.albumArtwork} alt="앨범 아트워크"
             className="albumArtwork" />
           </div>
           <div className="categoryContainer">
@@ -30,17 +30,17 @@ function MusicDetail(){
           </div>
           <div clssName="restDetail">
             <a className="artistName">{albumData.artistName}</a>
-          </div>
-        <p className="artistName">{albumData.artistName}</p>
-        <div className="trackList">
-        {albumData.tracks.map((track, index) => (
-          <div key={index} className="trackItem">
+            <span clssName="dott">•</span>
+            <a clssName="trackTitleDetail">{albumData.albumTitle}</a>
+            <span clssName="dott">•</span>
             <span className="trackName">{track.name}</span>
+            <span clssName="dott">•</span>
             <span className="trackDuration">{track.duration}</span>
+            <span clssName="dott">•</span>
+            <span className="playcount">{track.duration}</span>
           </div>
-        ))}
-      </div>
-      <div className="playButton">재생</div>
+        
+        <div className="playButton">재생</div>
       <Footer/>
     </div>
     );
