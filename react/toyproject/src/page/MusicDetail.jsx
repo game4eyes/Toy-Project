@@ -15,6 +15,7 @@ const albumData = {
 
 function MusicDetail(){
     return(
+
         <div className="musicDetailContainer">
         <h2 className="trackTitle">{albumData.albumTitle}</h2>
         <p className="artistName">{albumData.artistName}</p>

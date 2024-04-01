@@ -9,7 +9,11 @@ import Home from './page/Home';
 import Navigation from './component/Nav';
 import Signup from './page/Signup';
 import MusicDetail from './page/MusicDetail';
+<<<<<<< HEAD
 import LoginPage from './page/LoginPage';  // 로그인 페이지 추가합니다 (04/01)
+=======
+//import LoginPage from './LoginPage';  // 로그인 페이지 추가합니다 (04/01)
+>>>>>>> 3fc1287 (design music detail)
 
 function App() {
   return (
