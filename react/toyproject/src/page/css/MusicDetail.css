@@ -7,7 +7,16 @@
   min-height: calc(100vh - 100px); /* 화면 전체 높이에서 푸터 높이를 뺀 값 */
   display: flex;
   flex-direction: column;
+
 }
+
+.albumArtworkContainer {
+  width: 50%; /* 필요에 따라 조정하세요 */
+  display: flex;
+  justify-content: center; /* 앨범 아트워크를 중앙에 정렬 */
+  margin-top: 50px; /* 앨범 아트워크 아래 공간 */
+}
+
 
 .trackTitle {
   font-size: 24px;
@@ -21,13 +30,17 @@
 }
 
 .playButton {
-  background-color: #1db954; /* Spotify 녹색 */
-  color: #fff; /* 흰색 텍스트 */
-  padding: 10px 20px;
-  border-radius: 20px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: #1db954; /* Spotify green */
+  color: #fff;
+  border-radius: 50%; 
+  font-size: 11px;
   cursor: pointer;
-  margin-top: 10px;
+  margin-bottom: 500px;
 }
 
 .trackList {
