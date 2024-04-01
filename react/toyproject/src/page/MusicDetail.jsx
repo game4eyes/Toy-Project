@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Footer from './Footer';
 import './css/MusicDetail.css';
 
 const albumData = {
@@ -27,6 +27,7 @@ function MusicDetail(){
         ))}
       </div>
       <div className="playButton">재생</div>
+      <Footer/>
     </div>
     );
     

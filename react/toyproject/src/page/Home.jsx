@@ -10,6 +10,9 @@ function Home() {
     navigate('/MusicDetail');
   };
   
+  /**@todo_indexslider */
+  /**@author_윤기님 */
+  
   const handleIconClick = (event, articleId) => {
     event.stopPropagation(); // 이벤트 버블링 방지
     // articleId를 기반으로 다른 동작 수행
