@@ -54,17 +54,50 @@ const Script = () => {
 
         fetchData();
     }, []);
-
     async function getAccessToken(clientId, code) {
-        // 엑세스 토큰 가져오기
+        const verifier = localStorage.getItem("verifier");
+    
+        const params = new URLSearchParams();
+        params.append("client_id", clientId);
+        params.append("grant_type", "authorization_code");
+        params.append("code", code);
+        params.append("redirect_uri", "http://localhost:5173/callback");
+        params.append("code_verifier", verifier);
+    
+        const response = await fetch("https://accounts.spotify.com/api/token", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: params
+        });
+    
+        const data = await response.json();
+        return data.access_token;
     }
 
     async function fetchProfile(token) {
-        // 웹 API 불러와서 프로필 새로고침하기
+        const result = await fetch("https://api.spotify.com/v1/me", {
+            method: "GET", headers: { Authorization: `Bearer ${token}` }
+        });
+    
+        return await result.json();
     }
 
     function populateUI(profile) {
-        // 위에서 불러온 프로필 데이터에 맞춰서 UI 새로고침하기
+        document.getElementById("displayName").innerText = profile.display_name;
+        if (profile.images[0]) {
+            const profileImage = new Image(200, 200);
+            profileImage.src = profile.images[0].url;
+            document.getElementById("avatar").appendChild(profileImage);
+            document.getElementById("imgUrl").innerText = profile.images[0].url;
+        }
+        document.getElementById("id").innerText = profile.id;
+        document.getElementById("email").innerText = profile.email;
+        document.getElementById("uri").innerText = profile.uri;
+        document.getElementById("uri").setAttribute("href", profile.external_urls.spotify);
+        document.getElementById("url").innerText = profile.href;
+        document.getElementById("url").setAttribute("href", profile.href);
     }
 
     return (
