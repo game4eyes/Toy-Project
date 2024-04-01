@@ -4,13 +4,10 @@
   padding: 20px;
   width: 100%;
   border-radius: 8px;
-<<<<<<< HEAD
   min-height: calc(100vh - 100px); /* 화면 전체 높이에서 푸터 높이를 뺀 값 */
   display: flex;
   flex-direction: column;
-=======
   margin-top: 300px;
->>>>>>> 3fc1287 (design music detail)
 }
 
 .trackTitle {
