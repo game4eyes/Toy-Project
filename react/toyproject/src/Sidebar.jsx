@@ -11,6 +11,8 @@ import { GoPlus } from "react-icons/go";
 import Header from './Header';
 import Navigation from './component/Nav';
 
+/**@todo 플레이리스트 추가, 리스트 레이아웃 */
+/** useState 사이드바 상태관리 */
 function Sidebar() {
   const [showSidebar, setShowSidebar] = useState(false);
   const [isResizing, setIsResizing] = useState(false);
@@ -24,7 +26,7 @@ function Sidebar() {
     setShowSidebar(!showSidebar);
   };
 
-   // 네비게이션을 열거나 닫는 함수
+   /** 네비게이션을 열거나 닫는 함수 */ 
    const toggleNavigation = () => {
     setIsNavOpen(!isNavOpen);
 };

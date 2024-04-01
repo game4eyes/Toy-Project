@@ -22,12 +22,16 @@
     border-radius: 20px; /* 원하는 반지름 크기로 조절 */
     background-color: black;
     color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
   
   .joinHeader {
     border-radius: 20px; /* 원하는 반지름 크기로 조절 */
     background-color: white;
     color: black;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
   
   /* 버튼에 호버 효과 추가 */
