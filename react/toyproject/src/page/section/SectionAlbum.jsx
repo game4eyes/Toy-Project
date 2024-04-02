@@ -6,13 +6,13 @@ import { useParams } from 'react-router-dom';
 
 function SectionAlbum() {
   const navigate = useNavigate();
-  const handleMoveToDetail = () => {
-    navigate('/MusicDetail/:id');
+  const handleMoveToDetail = (id) => {
+    navigate(`/MusicDetail/${id}`);
   };
 
   /**@todo_indexslider */
   /**@author_윤기님 */
-  
+
   const handleIconClick = (event, articleId) => {
     event.stopPropagation(); // 이벤트 버블링 방지
     // articleId를 기반으로 다른 동작 수행
@@ -21,7 +21,7 @@ function SectionAlbum() {
 
   const sectionsData = [
     // 임시배열 컴포넌트로 바꿀 예정
-    { id: 1, title: '인기 앨범', viewAllLink: '/PopularArtists'},
+    { id: 1, title: '인기 앨범', viewAllLink: '/PopularArtists' },
   ];
 
   const articlesData = [
@@ -46,12 +46,12 @@ function SectionAlbum() {
               <figure>
                 <img src={article.image} alt="인기 아티스트 이미지" />
                 <div className='article-child'>
-                <button onClick={handleMoveToDetail}>
+                  <button onClick={() => handleMoveToDetail(article.id)}>
                     <span className="icon" onClick={(e) => handleIconClick(e, article.id)}>▶</span>
                   </button>
                 </div>
                 <div>
-                <h4><Link to={article.detailLink}>{article.title}</Link></h4>
+                  <h4><Link to={article.detailLink}>{article.title}</Link></h4>
                   <p>{article.composer}</p>
                 </div>
               </figure>
