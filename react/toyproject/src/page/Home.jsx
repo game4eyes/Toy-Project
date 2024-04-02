@@ -1,3 +1,5 @@
+/*eslint-disable*/
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
@@ -7,7 +9,6 @@ import Slider from '../component/Slider';
 import SectionAlbum from './section/SectionAlbum';
 import SectionArtist from './section/SectionArtist';
 import SectionRadio from './section/SectionRadio';
-
 
   /**@todo_indexslider */
   /**@author_윤기님 & 명준명준 */

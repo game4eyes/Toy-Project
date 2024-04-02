@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './css/SectionAlbum.css';
+import './css/SectionArtist.css';
 import { useNavigate } from 'react-router-dom';
 
-function Home() {
+function SectionArtist() {
   const navigate = useNavigate();
   const handleMoveToDetail = () => {
     navigate('/MusicDetail');
@@ -20,7 +20,7 @@ function Home() {
 
   const sectionsData = [
     // 임시배열 컴포넌트로 바꿀 예정
-    { id: 1, title: '인기 앨범', viewAllLink: '/PopularArtists'},
+    { id: 1, title: '인기아티스트', viewAllLink: '/PopularArtists'},
   ];
 
   const articlesData = [
@@ -31,7 +31,7 @@ function Home() {
   return (
     <div className='home-background'>
       {sectionsData.map(section => (
-        <section key={section.id} >
+        <section key={section.id} style={{ paddingTop: '50px' }}>
           <div className="popular-artists">
             <div>
               <h2>
@@ -63,4 +63,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default SectionArtist;

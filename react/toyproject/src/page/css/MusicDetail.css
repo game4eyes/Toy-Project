@@ -1,14 +1,20 @@
 .musicDetailContainer {
-  background-color: #121212; /* Spotify 어두운 배경 */
+  background-color: #121212; /* 어두운 배경 색상 */
   color: #fff; /* 흰색 텍스트 */
   padding: 20px;
   width: 100%;
   border-radius: 8px;
-  min-height: calc(100vh - 100px); /* 화면 전체 높이에서 푸터 높이를 뺀 값 */
+  min-height: calc(100vh - 100px); /* 전체 높이에서 푸터 높이를 제외한 값 */
   display: flex;
   flex-direction: column;
+  align-items: center; /* 요소들을 가운데로 정렬 */
+}
 
-
+.albumArtworkContainer {
+  width: 100%; /* 앨범 아트워크 컨테이너 너비 */
+  display: flex;
+  justify-content: center; /* 아트워크를 가운데로 정렬 */
+  margin-bottom: 20px; /* 아래 여백 */
 }
   .albumArtworkContainer {
     width: 50%; /* 필요에 따라 조정하세요 */
@@ -17,15 +23,31 @@
     margin-top: 50px; /* 앨범 아트워크 아래 공간 */
   }
 
+.albumArtwork {
+  max-width: 200px; /* 아트워크 최대 너비 */
+  border-radius: 8px; /* 아트워크 둥근 모서리 */
+}
+
+.categoryContainer {
+  /* 카테고리 스타일 추가 */
+  font-size: 12px;
+  color: #b3b3b3;
+  margin-bottom: 5px;
+}
+
+.trackTitleContainer {
+  /* 트랙 제목 컨테이너 스타일 추가 */
+  margin-bottom: 10px;
+}
 
 .trackTitle {
   font-size: 24px;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 .artistName {
   font-size: 18px;
-  color: #b3b3b3; /* 강조를 덜한 회색 */
+  color: #b3b3b3; /* 덜 강조된 회색 */
   margin-bottom: 16px;
 }
 
@@ -33,14 +55,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
+  width: 50px; /* 플레이 버튼 크기 */
   height: 50px;
-  background-color: #1db954; /* Spotify green */
+  background-color: #1db954; /* 녹색 배경 */
   color: #fff;
-  border-radius: 50%; 
-  font-size: 11px;
+  border-radius: 50%; /* 원형 플레이 버튼 */
+  font-size: 14px; /* 텍스트 크기 */
   cursor: pointer;
-  margin-bottom: 500px;
+  margin-top: 20px; /* 위 여백 */
+  margin-bottom: 30px; /* 아래 여백 */
 }
 .trackList {
   flex: 1; /* 트랙 리스트가 남은 공간을 모두 차지하도록 설정 */
@@ -52,6 +75,10 @@
 }
 
 .trackName {
+  font-size: 16px;
+}
+
+.trackTitleDetail {
   font-size: 16px;
 }
 
