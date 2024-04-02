@@ -73,6 +73,10 @@
   font-size: 16px;
 }
 
+.trackTitleDetail {
+  font-size: 16px;
+}
+
 .trackDuration {
   font-size: 16px;
   color: #b3b3b3; /* 강조를 덜한 회색 */
