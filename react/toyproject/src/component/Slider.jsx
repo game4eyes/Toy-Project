@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './cpcss/Slider.css';
 
+
+/**수정중 */
+/**@todo_안쓰는라이브러리삭제 */
 function Slider() {
     const [activeIndex, setActiveIndex] = useState(0);
     
