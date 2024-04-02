@@ -23,7 +23,7 @@ function Header({ toggleSidebar }) {
       navigate('/Mypage');
     } else {
       // 아직 로그인되지 않은 상태라면 가입 페이지로 이동
-      navigate('/Signup');
+      navigate('/LoginPage');
     }
   };
 
@@ -43,7 +43,7 @@ function Header({ toggleSidebar }) {
         <div className="header-container">
           <div className="header-buttons">
             {/* 로그인 버튼 또는 로그아웃 버튼 렌더링 */}
-            <button className='loginHeader' onClick={toggleLogin}>
+            <button className='loginHeader' onClick={handlePageNavigation}>
               {isLoggedIn ? '로그아웃' : '로그인'}
             </button>
             {/* 가입하기 버튼 또는 마이페이지 버튼 렌더링 */}
