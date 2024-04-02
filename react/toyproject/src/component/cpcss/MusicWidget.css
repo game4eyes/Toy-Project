@@ -10,6 +10,7 @@
     padding: 0 20px;
     box-sizing: border-box;
     color: #fff;
+    z-index: 999;
   }
   
   .widget-title {

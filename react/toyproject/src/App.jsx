@@ -29,7 +29,7 @@ function App() {
           <Route path="/AlarmList" element={<AlarmList />} /> {/* 알림온거 목록 경로 */}
           <Route path="/Signup" element={<Signup />} /> {/* 회원가입페이지 경로 */}
           <Route path="/MusicDetail" element={<MusicDetail />} />{/* 뮤직 디테일 경로*/}
-          <Route path="/LoginPage" element={<LoginPage />} /> {/*경로추가. 제작자 확인부탁드림 */}
+          <Route path="/LoginPage" element={<LoginPage />} /> {/*경로추가*/}
         </Route>
       </Routes>
     </Router>

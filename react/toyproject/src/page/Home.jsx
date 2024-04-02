@@ -3,15 +3,17 @@ import { Link } from 'react-router-dom';
 import Footer from './Footer';
 import './css/Home.css';
 import { useNavigate } from 'react-router-dom';
+import Slider from '../component/Slider';
 
+
+  /**@todo_indexslider */
+  /**@author_윤기님 */
+  
 function Home() {
   const navigate = useNavigate();
   const handleMoveToDetail = () => {
     navigate('/MusicDetail');
   };
-  
-  /**@todo_indexslider */
-  /**@author_윤기님 */
   
   const handleIconClick = (event, articleId) => {
     event.stopPropagation(); // 이벤트 버블링 방지
@@ -33,6 +35,7 @@ function Home() {
 
   return (
     <div className='home-background'>
+      <Slider/>
       {sectionsData.map(section => (
         <section key={section.id} style={{ paddingTop: '50px' }}>
           <div className="popular-artists">

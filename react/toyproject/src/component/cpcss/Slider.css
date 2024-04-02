@@ -14,3 +14,75 @@
     height: 2px;
   }
  
+/* Slider.css */
+
+.slider-container {
+  position: relative;
+  max-width: 100%;
+  margin: 20px;
+  padding-top: 20px;
+  overflow: hidden;
+}
+
+.product-item {
+  width: 20%; /* 각 제품 항목의 너비를 조정하여 5개가 표시되도록 함 */
+  transition: transform 0.5s ease;
+  display: inline-block;
+  text-align: center;
+  position: relative; /* 버튼 위치를 조정하기 위해 필요 */
+}
+
+.center {
+  transform: scale(1.0);
+  z-index: 3 !important;
+}
+
+.left-side {
+  transform: scale(0.4);
+  z-index: 2;
+}
+.right-side {
+  transform: scale(0.4);
+  z-index: 2;
+}
+
+.etc {
+  transform: scale(0.4);
+  z-index: 1;
+}
+
+.controls {
+  
+  top: 50%;
+  
+}
+
+.controls button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.prev-button {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-70%);
+  left: 20px; /* 원하는 위치로 조절 가능 */
+}
+
+.next-button {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-70%);
+  right: 20px; /* 원하는 위치로 조절 가능 */
+}
+
+.controls button:hover {
+  background-color: #f4f4f4;
+}
