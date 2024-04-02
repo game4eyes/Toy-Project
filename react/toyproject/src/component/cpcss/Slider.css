@@ -30,34 +30,36 @@
   display: inline-block;
   text-align: center;
   position: relative; /* 버튼 위치를 조정하기 위해 필요 */
+  
 }
+
 
 .center {
   transform: scale(1.0);
   z-index: 3 !important;
+  right: 15%;
+  position: relative;
 }
 
-.left-side {
-  transform: scale(0.4);
-  z-index: 2;
-}
-.right-side {
-  transform: scale(0.4);
-  z-index: 2;
-}
 
-.etc {
-  transform: scale(0.4);
+.left-side-1 {
+  transform: translateX(-25%) scale(0.6); /* 좌측으로 50% 이동하여 겹치게 함 */
+  z-index: 2;
+}
+.left-side-2 {
+  transform: translateX(0%) scale(0.4); /* 좌측으로 50% 이동하여 겹치게 함 */
   z-index: 1;
 }
-
-.controls {
-  
-  top: 50%;
-  
+.right-side-1 {
+  transform: translateX(-20%) scale(0.6); /* 우측으로 50% 이동하여 겹치게 함 */
+  z-index: 2;
+}
+.right-side-2 {
+  transform: translateX(-50%) scale(0.4); /* 우측으로 50% 이동하여 겹치게 함 */
+  z-index:1;
 }
 
-.controls button {
+.controls-button {
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 50%;
@@ -83,6 +85,8 @@
   right: 20px; /* 원하는 위치로 조절 가능 */
 }
 
-.controls button:hover {
-  background-color: #f4f4f4;
+.next-button:hover,
+.prev-button:hover {
+  background-color: rgba(255, 255, 255, 0.5); /* 투명한 흰색으로 변경 */
+  transition: 0.5s;
 }
