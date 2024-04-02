@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 import Footer from './Footer';
 import './css/MusicDetail.css';
+import axios from 'axios';
+
 
 /**@author_윤기님 */
 const albumData = {
@@ -12,36 +14,49 @@ const albumData = {
     playcount: "123,456"
 };
 
-function MusicDetail(){
-    return(
+function MusicDetail() {
+    // 상태를 업데이트하여 트랙의 상세 정보를 저장합니다.
+    const [trackDetail, setTrackDetail] = useState(null);
+
+    useEffect(() => {
+        // Axios를 사용하여 HTTP GET 요청을 보냅니다.
+        axios.get('api/Tracks/7x9aauaA9cu6tyfpHnqDLo')
+            .then(response => {
+                // 응답으로 받은 데이터를 상태에 저장합니다.
+                setTrackDetail(response.data);
+            })
+            .catch(error => console.error('There was an error!', error));
+    }, []);
+
+    // trackDetail 상태가 null이 아니면 데이터를 표시합니다.
+    // 상태가 null인 경우 로딩 표시나 대체 텍스트를 표시할 수 있습니다.
+    return (
         <div className="musicDetailContainer">
-          <div clssName="topDetailContainer">
-            <div clssName="albumArtworkContainer">
-              <img src={albumData.albumArtwork} alt="앨범 아트워크"
-              className="albumArtwork" />
-            </div>
-            <div className="categoryContainer">
-              <span>곡</span>
-            </div>
-            <div clssName="trackTitleContainer">
-              <h1 className="trackTitle">{albumData.albumTitle}</h1>
-            </div>
-            <div clssName="restDetail">
-              <a className="artistName">{albumData.artistName}</a>
-              <span clssName="dott">•</span>
-              <a clssName="trackTitleDetail">{albumData.albumTitle}</a>
-              <span clssName="dott">•</span>
-              <span className="trackName">{albumData.albumDate}</span>
-              <span clssName="dott">•</span>
-              <span className="trackDuration">{albumData.duration}</span>
-              <span clssName="dott">•</span>
-              <span className="playcount">{albumData.playcount}</span>
-            </div>
-          </div>
-        <div className="playButton">재생</div>
-      <Footer/>
-    </div>
+            {trackDetail ? (
+                <>
+                    <div className="topDetailContainer">
+                        <div className="albumArtworkContainer">
+                            {/* 앨범 이미지를 표시합니다. */}
+                            <img src={trackDetail.album_image_640} alt="Album Artwork" className="albumArtwork" />
+                        </div>
+                        <div className="detailContainer">
+                            <div className="trackTitleContainer">
+                                {/* 트랙 이름을 표시합니다. */}
+                                <h1 className="trackTitle">{trackDetail.track_Name}</h1>
+                            </div>
+                            {/* 아티스트 이름을 표시합니다. 예제에서는 첫 번째 아티스트만 표시합니다. */}
+                            <div className="restDetail">
+                                <a className="artistName">{trackDetail.artist_Simplifieds[0].name}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <Footer />
+                </>
+            ) : (
+                <div>Loading...</div> // 데이터를 불러오는 동안 표시할 내용
+            )}
+        </div>
     );
-    
 }
+
 export default MusicDetail;
