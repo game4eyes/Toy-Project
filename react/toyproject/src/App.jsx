@@ -10,7 +10,7 @@ import Signup from './page/Signup';
 import MusicDetail from './page/MusicDetail';
 import LoginPage from './page/LoginPage';  // 로그인 페이지 추가합니다 (04/01)
 import Root from './router/Root';
-
+import Login from './component/Login';  //로그인 로직 추가 (04/02)
 
 
 function App() {
