@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from './Footer';
 import './css/MusicDetail.css';
 
+/**@author_윤기님 */
 const albumData = {
     albumTitle: "Happier",
     artistName: "Ed sheeran",
