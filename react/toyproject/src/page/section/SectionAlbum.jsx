@@ -2,13 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './css/SectionAlbum.css';
 import { useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 function SectionAlbum() {
   const navigate = useNavigate();
   const handleMoveToDetail = () => {
-    navigate('/MusicDetail');
+    navigate('/MusicDetail/:id');
   };
-  
+
   /**@todo_indexslider */
   /**@author_윤기님 */
   
@@ -62,5 +63,6 @@ function SectionAlbum() {
     </div>
   );
 }
+
 
 export default SectionAlbum;

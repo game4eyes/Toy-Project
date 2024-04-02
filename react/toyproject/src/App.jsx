@@ -9,10 +9,7 @@ import Navigation from './component/Nav';
 import Signup from './page/Signup';
 import MusicDetail from './page/MusicDetail';
 import LoginPage from './page/LoginPage';  // 로그인 페이지 추가합니다 (04/01)
-import Root from './router/Root';
-import Login from './component/Login';  //로그인 로직 추가 (04/02)
 import Home from './page/Home';
-
 
 /**@function_App path파일 생성예정 */
 
@@ -30,12 +27,12 @@ function App() {
           }
         >
           <Route index element={<Home />} /> {/* 홈 페이지 라우팅 */}
+          
           <Route path="/Mypage" element={<Mypage />} /> {/* 마이페이지 라우팅 */}
           <Route path="/AlarmList" element={<AlarmList />} /> {/* 알림온거 목록 경로 */}
           <Route path="/Signup" element={<Signup />} /> {/* 회원가입페이지 경로 */}
-          <Route path="/MusicDetail" element={<MusicDetail />} />{/* 뮤직 디테일 경로*/}
-          <Route path="/LoginPage" element={<LoginPage />} /> {/*로그인 페이지 경로*/}
-
+          <Route path="/MusicDetail/:id" element={<MusicDetail />} />{/* 뮤직 디테일 경로*/}
+          <Route path="/LoginPage" element={<LoginPage />} /> {/*경로추가. 제작자 확인부탁드림 */}
         </Route>
       </Routes>
     </Router>
