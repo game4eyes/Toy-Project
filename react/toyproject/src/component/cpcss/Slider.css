@@ -1,20 +1,50 @@
-/* VolumeSlider.css */
+/* 슬라이더 바 */
 .volume-slider {
-    width: 50%;
-    height: 5px; /* 높이를 조정하여 얇게 만듭니다. */
+  appearance: none;
+  width: 80%;
+  height: 5px; /* 높이를 조정하여 얇게 만듭니다. */
+  background: white; /* 배경색을 흰색으로 설정합니다. */
+  color: #81b71a;
+  background-color:#81b71a;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+/* 슬라이더 바의 포인터 */
+.volume-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 10px; /* 포인터의 너비를 설정합니다. */
+  height: 5px; /* 포인터의 높이를 설정합니다. */
+  background: #81b71a; /* 초록색으로 설정합니다. */
+  border-radius: 50%; /* 포인터를 원형으로 만듭니다. */
+  cursor: pointer;
+}
+
+/*플레이 위젯 재생시간 슬라이더*/
+
+  .time-slider{
+    appearance: none;
     background: white; /* 배경색을 흰색으로 설정합니다. */
     color: #81b71a;
     outline: none;
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
-  }
-  .time-slider{
-    width: 250px;
+    width: 400px;
     height: 2px;
   }
+  .time-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 10px; /* 포인터의 너비를 설정합니다. */
+    height: 5px; /* 포인터의 높이를 설정합니다. */
+    background: #81b71a; /* 초록색으로 설정합니다. */
+    border-radius: 50%; /* 포인터를 원형으로 만듭니다. */
+    cursor: pointer;
+  }
  
-/* Slider.css */
+/* 인덱스 대형 Slider.css */
 
 .slider-container {
   position: relative;

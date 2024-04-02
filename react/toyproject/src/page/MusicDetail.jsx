@@ -44,7 +44,7 @@ function MusicDetail(){
       </div>
       <Footer/>
     </div>
-  );
+    );
+    
 }
-
 export default MusicDetail;

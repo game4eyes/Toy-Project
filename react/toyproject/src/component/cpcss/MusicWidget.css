@@ -1,50 +1,118 @@
 .music-widget-container {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 72px;
-    background-color: #000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    box-sizing: border-box;
-    color: #fff;
-    z-index: 999;
-  }
-  
-  .widget-title {
-    margin: 0;
-  }
-  
-  .play-pause-button {
-    
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: #fff;
-    cursor: pointer;
-    border: 2px solid transparent; /* 초기에는 투명한 테두리 */
-    
-    position: absolute;
-    top: 5%;
-    left: 50%;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 72px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+  color: #fff;
+  z-index: 999;
+}
 
-    /* 호버 효과 */
-    transition: all 0.3s ease; /* 모든 속성에 대해 0.3초 동안 변화 적용 */
-  }
-  
-  /* 호버 효과 */
-  .play-pause-button:hover {
-    border-color: #81b71a; /* 호버 시 테두리 색상 변경 */
-    transform: scale(1.1); /* 호버 시 크기 살짝 커지도록 */
-  }
-  
-  .play-pause-button.playing {
-    background-color: black; /* 재생 중일 때 버튼 색상 변경 */
-  }
-  
-  /* 마우스 클릭 시 크기 변화 */
-  .play-pause-button:active {
-    transform: scale(0.9); /* 클릭 시 크기가 조금 작아지도록 */
-  }
+.widget-header {
+  display: flex;
+  align-items: center;
+}
+
+.widget-title {
+  margin: 0;
+  height: auto; /* 높이를 자동으로 조절하여 span 태그를 포함할 수 있도록 변경 */
+  font-size: 16px;
+}
+
+.widget-title span {
+  font-size: 14px;
+  color: #999;
+  display: block; /* 이미 display: block; 설정이 되어 있어, 이 설정으로 span 태그는 새로운 줄에 위치합니다. */
+}
+
+.MusicWidget-img {
+  width: 40px;
+  height: 50px;
+  margin-right: 10px; /* 이미지와 제목 사이 간격 조정 */
+  position: relative; /* 하위 요소를 위한 상대적인 위치 설정 */
+}
+.hover-button {
+  position: absolute; /* 절대 위치 설정 */
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 14px;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0; /* 기본적으로 숨겨진 상태 */
+  transition: opacity 0.3s ease;
+}
+
+.MusicWidget-img:hover .hover-button {
+  opacity: 1; /* 마우스 호버 시에만 보이도록 설정 */
+}
+
+.plus-button {
+  padding-left: 10px;
+}
+
+
+/* widget-content 스타일 */
+.widget-content {
+  display: flex;
+  flex-direction: column; /* 자식 요소들을 수직으로 쌓음 */
+  align-items: center; /* 가로 방향으로 중앙 정렬 */
+  justify-content: center; /* 세로 방향으로 중앙 정렬 */
+  position: relative;
+}
+
+ /* play-pause-button 스타일 */
+.play-pause-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent; /* 초기에는 투명한 테두리 */
+  position: absolute;
+  top: 2%;
+  left: 18%;
+  transition: all 0.3s ease; /* 호버 및 액티브 효과에 대한 전환 설정 */
+  position: relative;
+}
+
+/* 호버 및 액티브 효과 */
+.play-pause-button:hover {
+  border-color: #81b71a; /* 호버 시 테두리 색상 변경 */
+  transform: scale(1.1); /* 호버 시 크기 살짝 커지도록 */
+}
+
+.play-pause-button.playing {
+  background-color: black; /* 재생 중일 때 버튼 색상 변경 */
+}
+
+.play-pause-button:active {
+  transform: scale(0.9); /* 클릭 시 크기가 조금 작아지도록 */
+}
+
+
+
+/* play-pause-button-wrapper 스타일 */
+.play-pause-button-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.play-pause-button-wrapper > * {
+  margin-right: 10px; /* 각 버튼 사이의 간격 조정 */
+}
+
+.Fast-forward-btn{
+  padding-left: 80px;
+}
+
+/* 마지막 버튼의 우측 마진을 0으로 설정하여 오른쪽 끝에 배치합니다. */
+.play-pause-button-wrapper > :last-child {
+  margin-right: 0;
+}
