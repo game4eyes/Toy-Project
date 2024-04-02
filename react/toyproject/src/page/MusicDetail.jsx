@@ -13,35 +13,38 @@ const albumData = {
 };
 
 function MusicDetail(){
-    return(
-        <div className="musicDetailContainer">
-          <div clssName="topDetailContainer">
-            <div clssName="albumArtworkContainer">
-              <img src={albumData.albumArtwork} alt="앨범 아트워크"
-              className="albumArtwork" />
-            </div>
-            <div className="categoryContainer">
-              <span>곡</span>
-            </div>
-            <div clssName="trackTitleContainer">
-              <h1 className="trackTitle">{albumData.albumTitle}</h1>
-            </div>
-            <div clssName="restDetail">
-              <a className="artistName">{albumData.artistName}</a>
-              <span clssName="dott">•</span>
-              <a clssName="trackTitleDetail">{albumData.albumTitle}</a>
-              <span clssName="dott">•</span>
-              <span className="trackName">{albumData.albumDate}</span>
-              <span clssName="dott">•</span>
-              <span className="trackDuration">{albumData.duration}</span>
-              <span clssName="dott">•</span>
-              <span className="playcount">{albumData.playcount}</span>
-            </div>
+  return(
+    <div className="musicDetailContainer">
+      <div className="topDetailContainer">
+        <div className="albumArtworkContainer">
+          <img src={albumData.albumArtwork} alt="Album Artwork" className="albumArtwork" />
+        </div>
+        <div className="detailContainer"> {/* New container for the details */}
+          <div className="categoryContainer">
+            <span>곡</span>
           </div>
-        <div className="playButton">재생</div>
+          <div className="trackTitleContainer">
+            <h1 className="trackTitle">{albumData.albumTitle}</h1>
+          </div>
+          <div className="restDetail">
+            <a className="artistName">{albumData.artistName}</a>
+            <span className="dot">•</span>
+            <a className="trackTitleDetail">{albumData.albumTitle}</a>
+            <span className="dot">•</span>
+            <span className="trackName">{albumData.albumDate}</span>
+            <span className="dot">•</span>
+            <span className="trackDuration">{albumData.duration}</span>
+            <span className="dot">•</span>
+            <span className="playcount">{albumData.playcount}</span>
+          </div>
+        </div>
+      </div>
+      <div className="etcThing">
+      <div className="playButton">재생</div>
+      </div>
       <Footer/>
     </div>
-    );
-    
+  );
 }
+
 export default MusicDetail;

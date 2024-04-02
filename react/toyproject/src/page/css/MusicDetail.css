@@ -1,88 +1,68 @@
 .musicDetailContainer {
-  background-color: #121212; /* 어두운 배경 색상 */
-  color: #fff; /* 흰색 텍스트 */
+  background-color: #121212; /* Dark background color */
+  color: #fff; /* White text */
   padding: 20px;
-  width: 100%;
   border-radius: 8px;
-  min-height: calc(100vh - 100px); /* 전체 높이에서 푸터 높이를 제외한 값 */
+  min-height: calc(100vh - 100px); /* Height minus footer height */
   display: flex;
   flex-direction: column;
-  align-items: center; /* 요소들을 가운데로 정렬 */
+
+}
+
+.topDetailContainer{
+  width: 100%;
+  display: flex; /* Set display to flex for side-by-side layout */
+  align-items: center; /* Align items vertically */
+  justify-content: center; /* Center items horizontally */
+  margin-top: 30px;
 }
 
 .albumArtworkContainer {
-  width: 100%; /* 앨범 아트워크 컨테이너 너비 */
+  flex: 1; /* Allocate space for the artwork container */
   display: flex;
-  justify-content: center; /* 아트워크를 가운데로 정렬 */
-  margin-bottom: 20px; /* 아래 여백 */
+  justify-content: center; /* Center the artwork */
 }
-  .albumArtworkContainer {
-    width: 50%; /* 필요에 따라 조정하세요 */
-    display: flex;
-    justify-content: center; /* 앨범 아트워크를 중앙에 정렬 */
-    margin-top: 50px; /* 앨범 아트워크 아래 공간 */
-  }
 
 .albumArtwork {
-  max-width: 200px; /* 아트워크 최대 너비 */
-  border-radius: 8px; /* 아트워크 둥근 모서리 */
+  max-width: 180px; /* Maximum artwork width */
+  border-radius: 8px; /* Artwork rounded corners */
 }
 
-.categoryContainer {
-  /* 카테고리 스타일 추가 */
-  font-size: 12px;
-  color: #b3b3b3;
-  margin-bottom: 5px;
+/* Container for the details to be displayed beside the album artwork */
+.detailContainer {
+  flex: 2; /* Allocate twice as much space for the details */
+  margin-left: 5px; /* Space between artwork and details */
 }
 
-.trackTitleContainer {
-  /* 트랙 제목 컨테이너 스타일 추가 */
+.categoryContainer, .trackTitleContainer, .restDetail {
   margin-bottom: 10px;
 }
 
 .trackTitle {
-  font-size: 24px;
-  margin-bottom: 4px;
+  font-size: 2em; /* Adjust size as needed */
 }
 
-.artistName {
-  font-size: 18px;
-  color: #b3b3b3; /* 덜 강조된 회색 */
-  margin-bottom: 16px;
+.artistName, .trackName, .trackDuration, .playcount {
+  font-size: 1em; /* Adjust size as needed */
+  color: #fff; /* Less emphasized grey */
 }
 
 .playButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px; /* 플레이 버튼 크기 */
+  width: 50px;
   height: 50px;
-  background-color: #1db954; /* 녹색 배경 */
+  background-color: #1db954; /* Green background */
   color: #fff;
-  border-radius: 50%; /* 원형 플레이 버튼 */
-  font-size: 14px; /* 텍스트 크기 */
+  border-radius: 50%; /* Circular play button */
+  font-size: 14px;
   cursor: pointer;
-  margin-top: 20px; /* 위 여백 */
-  margin-bottom: 30px; /* 아래 여백 */
-}
-.trackList {
-  flex: 1; /* 트랙 리스트가 남은 공간을 모두 차지하도록 설정 */
-  overflow-y: auto; /* 내용이 넘칠 경우 스크롤 표시 */
+  margin-top: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  margin-left: 5%;
 }
 
-.trackItem {
-  margin-bottom: 8px;
-}
-
-.trackName {
-  font-size: 16px;
-}
-
-.trackTitleDetail {
-  font-size: 16px;
-}
-
-.trackDuration {
-  font-size: 16px;
-  color: #b3b3b3; /* 강조를 덜한 회색 */
+.etcThing{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
 }
