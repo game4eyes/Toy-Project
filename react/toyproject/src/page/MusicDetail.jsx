@@ -3,6 +3,7 @@ import axios from 'axios';
 import Footer from './Footer';
 import './css/MusicDetail.css';
 
+
 /**@author_윤기님 */
 const albumData = {
     albumTitle: "Happier",
@@ -12,7 +13,6 @@ const albumData = {
     duration: "3:25",
     playcount: "123,456"
 };
-
 function MusicDetail(){
 
     const [trackInfo, setTrackInfo] = useState(null);
