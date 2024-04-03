@@ -1,20 +1,50 @@
-/* VolumeSlider.css */
+/* 슬라이더 바 */
 .volume-slider {
-    width: 50%;
-    height: 5px; /* 높이를 조정하여 얇게 만듭니다. */
+  appearance: none;
+  width: 80%;
+  height: 5px; /* 높이를 조정하여 얇게 만듭니다. */
+  background: white; /* 배경색을 흰색으로 설정합니다. */
+  color: #81b71a;
+  background-color:#81b71a;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+/* 슬라이더 바의 포인터 */
+.volume-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 10px; /* 포인터의 너비를 설정합니다. */
+  height: 5px; /* 포인터의 높이를 설정합니다. */
+  background: #81b71a; /* 초록색으로 설정합니다. */
+  border-radius: 50%; /* 포인터를 원형으로 만듭니다. */
+  cursor: pointer;
+}
+
+/*플레이 위젯 재생시간 슬라이더*/
+
+  .time-slider{
+    appearance: none;
     background: white; /* 배경색을 흰색으로 설정합니다. */
     color: #81b71a;
     outline: none;
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
-  }
-  .time-slider{
-    width: 250px;
+    width: 400px;
     height: 2px;
   }
+  .time-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 10px; /* 포인터의 너비를 설정합니다. */
+    height: 5px; /* 포인터의 높이를 설정합니다. */
+    background: #81b71a; /* 초록색으로 설정합니다. */
+    border-radius: 50%; /* 포인터를 원형으로 만듭니다. */
+    cursor: pointer;
+  }
  
-/* Slider.css */
+/* 인덱스 대형 Slider.css */
 
 .slider-container {
   position: relative;
@@ -23,6 +53,18 @@
   padding-top: 20px;
   overflow: hidden;
 }
+
+.slider-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px; /* 선의 두께를 지정합니다. */
+  background-color: #444; /* 어두운 회색으로 설정합니다. */
+  margin-top: 10px;
+}
+
 
 .product-item {
   width: 20%; /* 각 제품 항목의 너비를 조정하여 5개가 표시되도록 함 */
@@ -73,14 +115,14 @@
 
 .prev-button {
   position: fixed;
-  top: 50%;
+  top: 38%;
   transform: translateY(-70%);
   left: 20px; /* 원하는 위치로 조절 가능 */
 }
 
 .next-button {
   position: fixed;
-  top: 50%;
+  top: 38%;
   transform: translateY(-70%);
   right: 20px; /* 원하는 위치로 조절 가능 */
 }
