@@ -34,6 +34,7 @@
   
   /* 카드 컨테이너 */
   article {
+    padding: 10px;
     width: 200px; /* 카드의 너비 */
     border-radius: 10px; /* 카드 모서리 둥글게 */
     background-color: rgba(0, 0, 0, 0); /* 배경색을 투명하게 설정 */
