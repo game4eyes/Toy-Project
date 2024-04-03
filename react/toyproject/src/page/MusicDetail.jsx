@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import Footer from './Footer';
 import './css/MusicDetail.css';
 
@@ -13,38 +14,62 @@ const albumData = {
 };
 
 function MusicDetail(){
-  return(
-    <div className="musicDetailContainer">
-      <div className="topDetailContainer">
-        <div className="albumArtworkContainer">
-          <img src={albumData.albumArtwork} alt="Album Artwork" className="albumArtwork" />
+
+    const [trackInfo, setTrackInfo] = useState(null);
+
+    useEffect(() => {
+        // Axios를 사용하여 API 호출
+        axios.get('http://localhost:8080/api/Tracks/7x9aauaA9cu6tyfpHnqDLo')
+            .then((response) => {
+                // 요청이 성공하면, 응답 데이터를 상태에 저장
+                setTrackInfo(response.data);
+                console.log(trackInfo);
+            })
+            .catch(error => {
+                // 요청이 실패하면, 오류 처리
+                console.error('There was an error!', error);
+            });
+    }, []);
+    // 상태 trackInfo가 변경될 때마다 실행되는 useEffect
+    useEffect(() => {
+        if (trackInfo) {
+            console.log(trackInfo);
+        }
+    }, [trackInfo]);
+
+    // 로딩 상태 처리
+    if (!trackInfo) {
+        return <div>Loading...</div>;
+    }
+
+    // API에서 받은 데이터로 UI를 구성
+    return (
+        <div className="musicDetailContainer">
+            {/* ... 기타 코드 */}
+            <div className="topDetailContainer">
+                <div className="albumArtworkContainer">
+                    <img src={trackInfo.album_image_300} alt="Album Artwork" className="albumArtwork" />
+                </div>
+                <div className="detailContainer">
+                    {/* ... */}
+                    <div className="trackTitleContainer">
+                        <h1 className="trackTitle">{trackInfo.track_Name}</h1>
+                    </div>
+                    <div className="restDetail">
+                        <a className="artistName">{trackInfo.artist_Simplifieds.map(artist => artist.name).join(', ')}</a>
+                        <span className="dot">•</span>
+                        <a className="trackTitleDetail">{trackInfo.album_type}</a>
+                        <span className="dot">•</span>
+                        <span className="trackName">{trackInfo.album_release_data}</span>
+                        {/* ... 기타 UI 구성 */}
+                    </div>
+                </div>
+            </div>
+            {/* ... 기타 코드 */}
+            <Footer/>
         </div>
-        <div className="detailContainer"> {/* New container for the details */}
-          <div className="categoryContainer">
-            <span>곡</span>
-          </div>
-          <div className="trackTitleContainer">
-            <h1 className="trackTitle">{albumData.albumTitle}</h1>
-          </div>
-          <div className="restDetail">
-            <a className="artistName">{albumData.artistName}</a>
-            <span className="dot">•</span>
-            <a className="trackTitleDetail">{albumData.albumTitle}</a>
-            <span className="dot">•</span>
-            <span className="trackName">{albumData.albumDate}</span>
-            <span className="dot">•</span>
-            <span className="trackDuration">{albumData.duration}</span>
-            <span className="dot">•</span>
-            <span className="playcount">{albumData.playcount}</span>
-          </div>
-        </div>
-      </div>
-      <div className="etcThing">
-      <div className="playButton">재생</div>
-      </div>
-      <Footer/>
-    </div>
+
     );
-    
 }
+
 export default MusicDetail;
