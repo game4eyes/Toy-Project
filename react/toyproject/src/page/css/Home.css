@@ -54,7 +54,8 @@
     width: 98%;
     height: auto;
     object-fit: cover;
-    border-radius: 50%; /* 이미지를 둥글게 만듭니다. */
+    border-radius: 15px;
+   
     transform: translate(1%, 1%); /* 가운데 위치고정 */
   }
   /* 버튼 스타일 */
@@ -87,8 +88,17 @@
   /* 이미지에 마우스 호버 시 버튼 표시 */
   figure:hover button {
     opacity: 1; /* 버튼 불투명하게 */
+     animation: slide-up 0.5s ease forwards; /* slide-up 애니메이션 적용 */
   }
-  
+
+  @keyframes slide-up {
+    0% {
+        top: 20%; /* 종료 위치: 위 */
+    }
+  }
+
+
+
   .article-parents .icon {
     position: absolute;
     top: 54%;

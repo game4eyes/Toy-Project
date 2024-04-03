@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 import './css/SectionArtist.css';
 import { useNavigate } from 'react-router-dom';
 
+
 function SectionArtist() {
   const navigate = useNavigate();
-  const handleMoveToDetail = () => {
-    navigate('/MusicDetail');
+  const handleMoveToDetail = (id) => {
+    navigate(`/MusicDetail/${id}`);
   };
  
   /**@todo_indexslider */
@@ -24,8 +25,8 @@ function SectionArtist() {
   ];
 
   const articlesData = [
-    { id: 1, image: 'https://i.scdn.co/image/ab67616100005174859e4c14fa59296c8649e0e4', title: '아티스트 1', composer: '작곡가 1', detailLink: '/artist/1' },
-    { id: 2, image: 'https://i.scdn.co/image/ab6761610000517440a7268dd742e5f63759b960', title: '아티스트 2', composer: '작곡가 2', detailLink: '/artist/2' },
+    { id: 3, image: 'https://i.scdn.co/image/ab67616100005174859e4c14fa59296c8649e0e4', title: '마틸다 ', detailLink: '/artist/1' },
+    { id: 4, image: 'https://i.scdn.co/image/ab6761610000517440a7268dd742e5f63759b960', title: '정국', detailLink: '/artist/2' },
   ];
 
   return (
@@ -43,15 +44,15 @@ function SectionArtist() {
           {articlesData.map(article => (
             <article key={article.id} className='article-parents'>
               <figure>
-                <img src={article.image} alt="인기 아티스트 이미지" />
+                <img src={article.image} id='SectionArtist' alt="인기 아티스트 이미지" />
                 <div className='article-child'>
-                <button onClick={handleMoveToDetail}>
+                <button onClick={() => handleMoveToDetail(article.id)}>
                     <span className="icon" onClick={(e) => handleIconClick(e, article.id)}>▶</span>
                   </button>
                 </div>
                 <div>
                 <h4><Link to={article.detailLink}>{article.title}</Link></h4>
-                  <p>{article.composer}</p>
+                  <p>아티스트</p>
                 </div>
               </figure>
             </article>

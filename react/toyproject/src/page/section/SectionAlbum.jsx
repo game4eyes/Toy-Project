@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './css/SectionAlbum.css';
 import { useNavigate } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+
 
 function SectionAlbum() {
   const navigate = useNavigate();
@@ -25,8 +25,9 @@ function SectionAlbum() {
   ];
 
   const articlesData = [
-    { id: 1, image: 'https://i.scdn.co/image/ab67616100005174859e4c14fa59296c8649e0e4', title: '아티스트 1', composer: '작곡가 1', detailLink: '/artist/1' },
-    { id: 2, image: 'https://i.scdn.co/image/ab6761610000517440a7268dd742e5f63759b960', title: '아티스트 2', composer: '작곡가 2', detailLink: '/artist/2' },
+    { id: 1, image: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMDdfMjI4%2FMDAxNjk2NjU2OTc4Mjgx.s2zWHG_JN809P57nWRqxNyxkwFz0Ww3qKSDCSy184rMg.CbWKYjL1vT86sYS74lMmkMzibSUeZDH0JnM12zCa-k0g.JPEG.mlb2k9%2Fqq.jpg&type=sc960_832', title: 'Happier', composer: '작곡가 1', detailLink: '/artist/1' },
+    { id: 2, image: 'https://upload.wikimedia.org/wikipedia/en/6/65/Kacey_Musgraves_-_Golden_Hour.png', title: 'golden hour', composer: '작곡가 2', detailLink: '/artist/2' },
+    { id: 3, image: 'https://i.scdn.co/image/ab67616d00001e023762ca7dddbb99a624a0c409', title: 'bonobono', composer: 'bonobono', detailLink: '/artist/3' },
   ];
 
   return (
