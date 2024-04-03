@@ -1,4 +1,7 @@
-import React, { useEffect } from 'react';
+// LoginPage.jsx
+
+import React, { useEffect, useState } from 'react';
+import './css/LoginPage.css';
 
 const LoginPage = () => {
   // 코드 확인자 생성 함수
@@ -71,17 +74,37 @@ const LoginPage = () => {
     };
   }, []);
 
+  const [rememberMe, setRememberMe] = useState(false); // 아이디 저장 상태를 관리하는 state 추가
+
+  const toggleRememberMe = () => {
+    setRememberMe(!rememberMe); // 아이디 저장 상태를 토글
+  };
+
   return (
-    <div>
-      <h1>로그인</h1>
-      <form onSubmit={handleLogin}>
+    <div className="login-container">
+      <h1 className="login-title">DobbyMusic</h1>
+      <form onSubmit={handleLogin} className="login-form">
         <label htmlFor="username">아이디:</label>
-        <input type="text" id="username" name="username" />
+        <input type="text" id="username" name="username" placeholder="아이디를 입력하세요" />
 
         <label htmlFor="password">비밀번호:</label>
-        <input type="password" id="password" name="password" />
+        <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요" />
 
-        <button type="submit">로그인</button>
+        <div className="remember-me-container">
+           <div className="toggle-switch">
+                <input type="checkbox"
+                  id="remember-me"
+                  className="remember-me-checkbox"
+                  checked={rememberMe}
+                  onChange={toggleRememberMe}
+                />
+                <label htmlFor="remember-me" className="remember-me-label"></label>
+            </div>
+                <label htmlFor="remember-me" className="remember-me-text">나를 기억해!!!!!!!!!!!!!!</label>
+         </div>
+
+
+        <button type="submit">LOGIN</button>
       </form>
       <p>아직 계정이 없으신가요? <a href="/Signup">회원가입</a></p>
     </div>
