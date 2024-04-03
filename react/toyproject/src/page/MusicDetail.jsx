@@ -13,6 +13,7 @@ const albumData = {
     duration: "3:25",
     playcount: "123,456"
 };
+
 function MusicDetail(){
 
     const [trackInfo, setTrackInfo] = useState(null);
@@ -67,7 +68,8 @@ function MusicDetail(){
             </div>
             {/* ... 기타 코드 */}
             <Footer/>
-        </div>
+
+    </div>
 
     );
 }
