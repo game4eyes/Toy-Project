@@ -20,7 +20,7 @@
         opacity: 1; /* 끝날 때 투명도를 1로 설정하여 완전히 나타나도록 함 */
     }
 }
- 
+
 .input-label {
   margin-bottom: 5px;
   color: white;
@@ -145,8 +145,11 @@
     margin-bottom : 10px;
     font-size: 14px;
   }
+<<<<<<< HEAD
 
   .links{
     font-size : 13px;
   }
+=======
+>>>>>>> e7513c7 (로그인 폼 제작)
   
