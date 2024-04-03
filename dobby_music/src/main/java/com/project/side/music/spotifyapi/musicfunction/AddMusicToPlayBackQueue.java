@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionException;
-
+// 재생목록에 노래를 추가하는 클래스
 public class AddMusicToPlayBackQueue {
     // Spotify API에 액세스하기 위한 액세스 토큰
     private static final String accessToken = "나중에 토큰 불러오는 값 넣어야함";
