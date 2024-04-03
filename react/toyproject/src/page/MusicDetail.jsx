@@ -64,7 +64,10 @@ function MusicDetail(){
                         <span className="trackName">{trackInfo.album_release_data}</span>
                         {/* ... 기타 UI 구성 */}
                     </div>
-                </div>
+                    </div>
+            </div>
+            <div className="etcThing">
+                <div className="playButton">재생</div>
             </div>
             {/* ... 기타 코드 */}
             <Footer/>
