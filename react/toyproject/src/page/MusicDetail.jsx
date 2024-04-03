@@ -1,8 +1,7 @@
-import React, {useState,useEffect} from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import Footer from './Footer';
 import './css/MusicDetail.css';
-import axios from 'axios';
-
 
 /**@author_윤기님 */
 const albumData = {
@@ -14,47 +13,59 @@ const albumData = {
     playcount: "123,456"
 };
 
-function MusicDetail() {
-    // 상태를 업데이트하여 트랙의 상세 정보를 저장합니다.
-    const [trackDetail, setTrackDetail] = useState(null);
+function MusicDetail(){
+    const [trackInfo, setTrackInfo] = useState(null);
 
     useEffect(() => {
-        // Axios를 사용하여 HTTP GET 요청을 보냅니다.
-        axios.get('api/Tracks/7x9aauaA9cu6tyfpHnqDLo')
-            .then(response => {
-                // 응답으로 받은 데이터를 상태에 저장합니다.
-                setTrackDetail(response.data);
+        // Axios를 사용하여 API 호출
+        axios.get('http://localhost:8080/api/Tracks/7x9aauaA9cu6tyfpHnqDLo')
+            .then((response) => {
+                // 요청이 성공하면, 응답 데이터를 상태에 저장
+                setTrackInfo(response.data);
+                console.log(trackInfo);
             })
-            .catch(error => console.error('There was an error!', error));
+            .catch(error => {
+                // 요청이 실패하면, 오류 처리
+                console.error('There was an error!', error);
+            });
     }, []);
+    // 상태 trackInfo가 변경될 때마다 실행되는 useEffect
+    useEffect(() => {
+        if (trackInfo) {
+            console.log(trackInfo);
+        }
+    }, [trackInfo]);
 
-    // trackDetail 상태가 null이 아니면 데이터를 표시합니다.
-    // 상태가 null인 경우 로딩 표시나 대체 텍스트를 표시할 수 있습니다.
+    // 로딩 상태 처리
+    if (!trackInfo) {
+        return <div>Loading...</div>;
+    }
+
+    // API에서 받은 데이터로 UI를 구성
     return (
         <div className="musicDetailContainer">
-            {trackDetail ? (
-                <>
-                    <div className="topDetailContainer">
-                        <div className="albumArtworkContainer">
-                            {/* 앨범 이미지를 표시합니다. */}
-                            <img src={trackDetail.album_image_640} alt="Album Artwork" className="albumArtwork" />
-                        </div>
-                        <div className="detailContainer">
-                            <div className="trackTitleContainer">
-                                {/* 트랙 이름을 표시합니다. */}
-                                <h1 className="trackTitle">{trackDetail.track_Name}</h1>
-                            </div>
-                            {/* 아티스트 이름을 표시합니다. 예제에서는 첫 번째 아티스트만 표시합니다. */}
-                            <div className="restDetail">
-                                <a className="artistName">{trackDetail.artist_Simplifieds[0].name}</a>
-                            </div>
-                        </div>
+            {/* ... 기타 코드 */}
+            <div className="topDetailContainer">
+                <div className="albumArtworkContainer">
+                    <img src={trackInfo.album_image_300} alt="Album Artwork" className="albumArtwork" />
+                </div>
+                <div className="detailContainer">
+                    {/* ... */}
+                    <div className="trackTitleContainer">
+                        <h1 className="trackTitle">{trackInfo.track_Name}</h1>
                     </div>
-                    <Footer />
-                </>
-            ) : (
-                <div>Loading...</div> // 데이터를 불러오는 동안 표시할 내용
-            )}
+                    <div className="restDetail">
+                        <a className="artistName">{trackInfo.artist_Simplifieds.map(artist => artist.name).join(', ')}</a>
+                        <span className="dot">•</span>
+                        <a className="trackTitleDetail">{trackInfo.album_type}</a>
+                        <span className="dot">•</span>
+                        <span className="trackName">{trackInfo.album_release_data}</span>
+                        {/* ... 기타 UI 구성 */}
+                    </div>
+                </div>
+            </div>
+            {/* ... 기타 코드 */}
+            <Footer/>
         </div>
     );
 }
