@@ -10,7 +10,7 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionException;
 
-public class StartPausePlayback {
+public class StartResumePlayback {
 
     // Spotify API에 접근하기 위한 액세스 토큰
     private static final String accessToken = "토큰 삽입 필요";
