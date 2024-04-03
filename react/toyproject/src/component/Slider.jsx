@@ -83,7 +83,7 @@ function Slider() {
                 {renderProductItems()}
             </div>
             <div className="controls">
-                < GrPrevious className="prev-button" onClick={handlePrev} size={40}/>
+                <GrPrevious className="prev-button" onClick={handlePrev} size={40}/>
                 <GrNext className="next-button" onClick={handleNext} size={40}/>
             </div>
         </div>

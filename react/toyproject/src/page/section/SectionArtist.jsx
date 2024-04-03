@@ -8,7 +8,7 @@ function SectionArtist() {
   const handleMoveToDetail = () => {
     navigate('/MusicDetail');
   };
-  
+ 
   /**@todo_indexslider */
   /**@author_윤기님 */
   

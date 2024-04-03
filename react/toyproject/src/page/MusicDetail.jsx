@@ -14,6 +14,7 @@ const albumData = {
 };
 
 function MusicDetail(){
+
     const [trackInfo, setTrackInfo] = useState(null);
 
     useEffect(() => {
@@ -67,6 +68,7 @@ function MusicDetail(){
             {/* ... 기타 코드 */}
             <Footer/>
         </div>
+
     );
 }
 
