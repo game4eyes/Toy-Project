@@ -74,6 +74,27 @@ const Script = () => {
 
         fetchData();
     }, []);
+    async function getAccessToken(clientId, code) {
+        const verifier = localStorage.getItem("verifier");
+    
+        const params = new URLSearchParams();
+        params.append("client_id", clientId);
+        params.append("grant_type", "authorization_code");
+        params.append("code", code);
+        params.append("redirect_uri", "http://localhost:5173/callback");
+        params.append("code_verifier", verifier);
+    
+        const response = await fetch("https://accounts.spotify.com/api/token", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: params
+        });
+    
+        const data = await response.json();
+        return data.access_token;
+    }
 
     async function fetchProfile(token) {
         const result = await fetch("https://api.spotify.com/v1/me", {
@@ -81,7 +102,7 @@ const Script = () => {
         });
     
         return await result.json();
-    }       // FetchAPI를 사용하도록 호출 @@
+    }
 
     function populateUI(profile) {
         document.getElementById("displayName").innerText = profile.display_name;
@@ -97,7 +118,7 @@ const Script = () => {
         document.getElementById("uri").setAttribute("href", profile.external_urls.spotify);
         document.getElementById("url").innerText = profile.href;
         document.getElementById("url").setAttribute("href", profile.href);
-    }       // 프로필 가져온거 표시 @@
+    }
 
     return (
         <div>
