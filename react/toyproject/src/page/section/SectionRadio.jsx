@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './css/SectionRadio.css';
 import { useNavigate } from 'react-router-dom';
 
-function Home() {
+function SectionRadio() {
   const navigate = useNavigate();
   const handleMoveToDetail = () => {
     navigate('/MusicDetail');
@@ -63,4 +63,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default SectionRadio;
