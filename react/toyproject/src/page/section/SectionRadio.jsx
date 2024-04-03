@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Footer from './Footer';
-import './css/Home.css';
+import './css/SectionRadio.css';
 import { useNavigate } from 'react-router-dom';
 
-function Home() {
+function SectionRadio() {
   const navigate = useNavigate();
   const handleMoveToDetail = () => {
     navigate('/MusicDetail');
@@ -21,7 +20,7 @@ function Home() {
 
   const sectionsData = [
     // 임시배열 컴포넌트로 바꿀 예정
-    { id: 1, title: '인기아티스트', viewAllLink: '/PopularArtists'},
+    { id: 1, title: '인기라디오', viewAllLink: '/PopularArtists'},
   ];
 
   const articlesData = [
@@ -59,9 +58,9 @@ function Home() {
           ))}
         </section>
       ))}
-      <Footer />
+
     </div>
   );
 }
 
-export default Home;
+export default SectionRadio;
