@@ -6,7 +6,7 @@ import com.wrapper.spotify.model_objects.specification.Track;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5174")
+@CrossOrigin(origins = "http://localhost:5173")
 @RequestMapping("/api/Tracks")
 public class MusicTracksController {
     private final TrackService trackService;
