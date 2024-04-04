@@ -21,7 +21,7 @@ function MusicDetail(){
 
     useEffect(() => {
         // Axios를 사용하여 API 호출
-        axios.get('http://localhost:9090/api/Tracks/7x9aauaA9cu6tyfpHnqDLo')
+        axios.get('http://localhost:8080/api/Tracks/7x9aauaA9cu6tyfpHnqDLo')
             .then((response) => {
                 // 요청이 성공하면, 응답 데이터를 상태에 저장
                 setTrackInfo(response.data);
