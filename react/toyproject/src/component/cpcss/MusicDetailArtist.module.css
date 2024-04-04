@@ -1,0 +1,22 @@
+.artistimg {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+}
+.flex {
+    display: grid;
+    padding : 10px;
+    grid-gap: 10px;
+    grid-auto-flow: column;
+    justify-content: start;
+    text-decoration-line: blink;
+    color: white;
+}
+.flex:hover {
+    background-color: #333333;
+    border-radius: 5px;
+}
+.info{
+    color: white;
+    align-content: center;
+}
