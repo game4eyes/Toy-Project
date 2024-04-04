@@ -1,32 +1,14 @@
 .login-container {
     width: 350px;
-    position: fixed; /* 고정 위치 */
-    top: 50%; /* 화면의 중앙에서 위로부터 50% 떨어진 곳에 */
-    left: 50%; /* 화면의 중앙에서 왼쪽으로부터 50% 떨어진 곳에 */
-    transform: translate(-50%, -50%); /* 수평, 수직으로 정확히 중앙으로 이동 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 20px;
     border-radius: 50px;
     background-color: #000000;
-    animation: slideDown 0.5s ease forwards; /* slideDown 애니메이션 적용 */
-}
-
-@keyframes slideDown {
-    from {
-        transform: translate(-50%, -100%); /* 시작 위치: 위에서 아래로 */
-        opacity: 0; /* 시작할 때 투명도를 0으로 설정하여 천천히 나타나도록 함 */
-    }
-    to {
-        transform: translate(-50%, -50%); /* 최종 위치: 중앙에 */
-        opacity: 1; /* 끝날 때 투명도를 1로 설정하여 완전히 나타나도록 함 */
-    }
-}
-
-.input-label {
-  margin-bottom: 5px;
-  color: white;
-  font-size: 13px;
-}
-
+  }
+  
   .login-title {
     margin-bottom: 70px;
     text-align: center;
@@ -70,7 +52,6 @@
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    font-weight: bold;
   }
   
   button[type="submit"]:hover {
@@ -145,11 +126,4 @@
     margin-bottom : 10px;
     font-size: 14px;
   }
-<<<<<<< HEAD
-
-  .links{
-    font-size : 13px;
-  }
-=======
->>>>>>> e7513c7 (로그인 폼 제작)
   
