@@ -1,0 +1,152 @@
+.login-container {
+    width: 350px;
+    position: fixed; /* 고정 위치 */
+    top: 50%; /* 화면의 중앙에서 위로부터 50% 떨어진 곳에 */
+    left: 50%; /* 화면의 중앙에서 왼쪽으로부터 50% 떨어진 곳에 */
+    transform: translate(-50%, -50%); /* 수평, 수직으로 정확히 중앙으로 이동 */
+    padding: 20px;
+    border-radius: 50px;
+    background-color: #000000;
+    animation: slideDown 0.5s ease forwards; /* slideDown 애니메이션 적용 */
+}
+
+@keyframes slideDown {
+    from {
+        transform: translate(-50%, -100%); /* 시작 위치: 위에서 아래로 */
+        opacity: 0; /* 시작할 때 투명도를 0으로 설정하여 천천히 나타나도록 함 */
+    }
+    to {
+        transform: translate(-50%, -50%); /* 최종 위치: 중앙에 */
+        opacity: 1; /* 끝날 때 투명도를 1로 설정하여 완전히 나타나도록 함 */
+    }
+}
+ 
+.input-label {
+  margin-bottom: 5px;
+  color: white;
+  font-size: 13px;
+}
+
+  .login-title {
+    margin-bottom: 70px;
+    text-align: center;
+    color: white;
+    font-size: 45px;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 5px;
+    color: white;
+  }
+  
+  input[type="text"] {
+    padding: 11px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: #242424;
+    background-color: #f9f9f9;
+  }
+
+  input[type="password"] {
+    padding: 11px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: #242424;
+    background-color: #f9f9f9;
+  }
+  
+  button[type="submit"] {
+    margin-top : 20px;
+    padding: 13px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  p {
+    margin-top: 10px;
+    color: #666;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+
+
+  
+  .remember-me-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .toggle-switch {
+    position: relative;
+  }
+  
+  .remember-me-checkbox {
+    display: none;
+  }
+  
+  .remember-me-label {
+    position: relative;
+    display: inline-block;
+    width: 35px;
+    height: 17px;
+    background-color: #ddd;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 10px; /* 여백 추가 */
+  }
+  
+  .remember-me-label:before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+  
+  .remember-me-checkbox:checked + .remember-me-label {
+    background-color: #007bff;
+  }
+  
+  .remember-me-checkbox:checked + .remember-me-label:before {
+    transform: translateX(20px);
+  }
+  
+  .remember-me-text {
+    color: white;
+    margin-bottom : 10px;
+    font-size: 14px;
+  }
+
+  .links{
+    font-size : 13px;
+  }
+  
