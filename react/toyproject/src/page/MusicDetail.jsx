@@ -3,7 +3,7 @@ import axios from 'axios';
 import Footer from './Footer';
 import MusicDetailArtist from "../component/MusicDetailArtist.jsx";
 import './css/MusicDetail.css';
-
+import ColorHistogram from '../component/ColorHistogram';
 
 /**@author_윤기님 */
 const albumData = {
@@ -18,10 +18,11 @@ const albumData = {
 function MusicDetail(){
     const [trackInfo, setTrackInfo] = useState(null);
     const [artistDetails, setArtistDetails] = useState({});
+    const [backgroundColor, setBackgroundColor] = useState('white'); // 배경색 state 추가
 
     useEffect(() => {
         // Axios를 사용하여 API 호출
-        axios.get('http://localhost:8080/api/Tracks/7x9aauaA9cu6tyfpHnqDLo')
+        axios.get('http://localhost:9092/api/Tracks/7x9aauaA9cu6tyfpHnqDLo')
             .then((response) => {
                 // 요청이 성공하면, 응답 데이터를 상태에 저장
                 setTrackInfo(response.data);
@@ -52,9 +53,9 @@ function MusicDetail(){
     return (
         <div className="musicDetailContainer">
             {/* ... 기타 코드 */}
-            <div className="topDetailContainer">
+            <div className="topDetailContainer" style={{ background: 'linear-gradient(white, transparent)' }}>
                 <div className="albumArtworkContainer">
-                    <img src={trackInfo.album_image_300} alt="Album Artwork" className="albumArtwork"/>
+                    <ColorHistogram imageUrl={trackInfo.album_image_300} alt="Album Artwork" className="albumArtwork"/>
                 </div>
                 <div className="detailContainer">
                     {/* ... */}
