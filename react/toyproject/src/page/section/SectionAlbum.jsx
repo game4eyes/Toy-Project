@@ -25,9 +25,9 @@ function SectionAlbum() {
   ];
 
   const articlesData = [
-    { id: 1, image: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMDdfMjI4%2FMDAxNjk2NjU2OTc4Mjgx.s2zWHG_JN809P57nWRqxNyxkwFz0Ww3qKSDCSy184rMg.CbWKYjL1vT86sYS74lMmkMzibSUeZDH0JnM12zCa-k0g.JPEG.mlb2k9%2Fqq.jpg&type=sc960_832', title: 'Happier', composer: '작곡가 1', detailLink: '/artist/1' },
-    { id: 2, image: 'https://upload.wikimedia.org/wikipedia/en/6/65/Kacey_Musgraves_-_Golden_Hour.png', title: 'golden hour', composer: '작곡가 2', detailLink: '/artist/2' },
-    { id: 3, image: 'https://i.scdn.co/image/ab67616d00001e023762ca7dddbb99a624a0c409', title: 'bonobono', composer: 'bonobono', detailLink: '/artist/3' },
+    { id: "58JkIC1jK1NZNSJeLXfpWt", image: 'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMDdfMjI4%2FMDAxNjk2NjU2OTc4Mjgx.s2zWHG_JN809P57nWRqxNyxkwFz0Ww3qKSDCSy184rMg.CbWKYjL1vT86sYS74lMmkMzibSUeZDH0JnM12zCa-k0g.JPEG.mlb2k9%2Fqq.jpg&type=sc960_832', title: 'Happier', composer: '작곡가 1', detailLink: '/artist/1' },
+    { id: "0ScP795B5ZWkFHZ3NqUcxx", image: 'https://upload.wikimedia.org/wikipedia/en/6/65/Kacey_Musgraves_-_Golden_Hour.png', title: 'golden hour', composer: '작곡가 2', detailLink: '/artist/2' },
+    { id: "5XWlyfo0kZ8LF7VSyfS4Ew", image: 'https://i.scdn.co/image/ab67616d00001e023762ca7dddbb99a624a0c409', title: 'bonobono', composer: 'bonobono', detailLink: '/artist/3' },
   ];
 
   return (
