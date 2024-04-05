@@ -1,0 +1,5 @@
+
+.albumArtworkContainer .colorHistogram {
+    max-width: 180px; /* Maximum artwork width */
+    border-radius: 8px; /* Artwork rounded corners */
+  }

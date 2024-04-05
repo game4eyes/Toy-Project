@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Footer from './Footer';
+import MusicDetailArtist from "../component/MusicDetailArtist.jsx";
 import './css/MusicDetail.css';
-
+import ColorHistogram from '../component/ColorHistogram';
 
 /**@author_윤기님 */
 const albumData = {
@@ -15,28 +16,33 @@ const albumData = {
 };
 
 function MusicDetail(){
-
     const [trackInfo, setTrackInfo] = useState(null);
+    const [artistDetails, setArtistDetails] = useState({});
+    const [backgroundColor, setBackgroundColor] = useState('white'); // 배경색 state 추가
 
     useEffect(() => {
         // Axios를 사용하여 API 호출
-        axios.get('http://localhost:8080/api/Tracks/7x9aauaA9cu6tyfpHnqDLo')
+        axios.get('http://localhost:9092/api/Tracks/7x9aauaA9cu6tyfpHnqDLo')
             .then((response) => {
                 // 요청이 성공하면, 응답 데이터를 상태에 저장
                 setTrackInfo(response.data);
-                console.log(trackInfo);
+                console.log(trackInfo)
             })
             .catch(error => {
                 // 요청이 실패하면, 오류 처리
                 console.error('There was an error!', error);
             });
     }, []);
-    // 상태 trackInfo가 변경될 때마다 실행되는 useEffect
-    useEffect(() => {
-        if (trackInfo) {
-            console.log(trackInfo);
-        }
-    }, [trackInfo]);
+    // const artistid = trackInfo.artist_Simplifieds.id;
+    // useEffect(() => {
+    //     axios.get('http://localhost:8080/api/Tracks/'+artistid)
+    //         .then((Response) => {
+    //             setArtistDetails(Response.data);
+    //         })
+    //         .catch(error => {
+    //             console.log('There was an error!', erro);
+    //         });
+    // },[trackInfo]);
 
     // 로딩 상태 처리
     if (!trackInfo) {
@@ -47,9 +53,9 @@ function MusicDetail(){
     return (
         <div className="musicDetailContainer">
             {/* ... 기타 코드 */}
-            <div className="topDetailContainer">
+            <div className="topDetailContainer" style={{ background: 'linear-gradient(white, transparent)' }}>
                 <div className="albumArtworkContainer">
-                    <img src={trackInfo.album_image_300} alt="Album Artwork" className="albumArtwork" />
+                    <ColorHistogram imageUrl={trackInfo.album_image_300} alt="Album Artwork" className="albumArtwork"/>
                 </div>
                 <div className="detailContainer">
                     {/* ... */}
@@ -57,19 +63,31 @@ function MusicDetail(){
                         <h1 className="trackTitle">{trackInfo.track_Name}</h1>
                     </div>
                     <div className="restDetail">
-                        <a className="artistName">{trackInfo.artist_Simplifieds.map(artist => artist.name).join(', ')}</a>
-                        <span className="dot">•</span>
+                        {trackInfo.artist_Simplifieds.map((artist, index) => (
+                            <React.Fragment key={artist.id}>
+                                <a className="artistName" href={`/artist/${artist.id}`}>
+                                    {artist.name}
+                                </a>
+                                {index < trackInfo.artist_Simplifieds.length - 1 && <span className="dot"> • </span>}
+                            </React.Fragment>
+                        ))}
+                        <span className="dot"> • </span>
                         <a className="trackTitleDetail">{trackInfo.album_type}</a>
-                        <span className="dot">•</span>
+                        <span className="dot"> • </span>
                         <span className="trackName">{trackInfo.album_release_data}</span>
-                        {/* ... 기타 UI 구성 */}
                     </div>
                     </div>
             </div>
             <div className="etcThing">
                 <div className="playButton">재생</div>
             </div>
-            {/* ... 기타 코드 */}
+            <div className="musicDetailArtist">
+                {trackInfo.artist_Simplifieds.map((artist, index) => (
+                    <React.Fragment key={artist.id}>
+                        <MusicDetailArtist id={artist.id} name={artist.name}/>
+                    </React.Fragment>
+                ))}
+            </div>
             <Footer/>
 
     </div>
