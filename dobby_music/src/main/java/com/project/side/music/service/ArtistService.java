@@ -23,6 +23,7 @@ public class ArtistService {
     private static GetArtistRequest getArtistRequest;
     public ArtistDetailsDTO getArtist_Sync(String q) {
         Artist artist;
+        getArtistRequest = spotifyApi.getArtist(q).build();
         ArtistDetailsDTO artistDetailsDTO = new ArtistDetailsDTO();
         ArrayList<String> list = new ArrayList<String>();
         try {
