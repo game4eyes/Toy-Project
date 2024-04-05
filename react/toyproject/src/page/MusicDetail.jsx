@@ -1,28 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Footer from './Footer';
 import MusicDetailArtist from "../component/MusicDetailArtist.jsx";
 import './css/MusicDetail.css';
 import ColorHistogram from '../component/ColorHistogram';
 
-/**@author_윤기님 */
-const albumData = {
-    albumTitle: "Happier",
-    artistName: "Ed sheeran",
-    albumArtwork : "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMDdfMjI4%2FMDAxNjk2NjU2OTc4Mjgx.s2zWHG_JN809P57nWRqxNyxkwFz0Ww3qKSDCSy184rMg.CbWKYjL1vT86sYS74lMmkMzibSUeZDH0JnM12zCa-k0g.JPEG.mlb2k9%2Fqq.jpg&type=sc960_832",
-    albumDate : "2024",
-    duration: "3:25",
-    playcount: "123,456"
-};
-
 function MusicDetail(){
+    const {trackId} = useParams();
     const [trackInfo, setTrackInfo] = useState(null);
-    const [artistDetails, setArtistDetails] = useState({});
     const [backgroundColor, setBackgroundColor] = useState('white'); // 배경색 state 추가
 
     useEffect(() => {
         // Axios를 사용하여 API 호출
-        axios.get('http://localhost:9092/api/Tracks/7x9aauaA9cu6tyfpHnqDLo')
+        axios.get('http://localhost:9090/api/Tracks/' + trackId)
             .then((response) => {
                 // 요청이 성공하면, 응답 데이터를 상태에 저장
                 setTrackInfo(response.data);
@@ -33,16 +24,6 @@ function MusicDetail(){
                 console.error('There was an error!', error);
             });
     }, []);
-    // const artistid = trackInfo.artist_Simplifieds.id;
-    // useEffect(() => {
-    //     axios.get('http://localhost:8080/api/Tracks/'+artistid)
-    //         .then((Response) => {
-    //             setArtistDetails(Response.data);
-    //         })
-    //         .catch(error => {
-    //             console.log('There was an error!', erro);
-    //         });
-    // },[trackInfo]);
 
     // 로딩 상태 처리
     if (!trackInfo) {
@@ -55,7 +36,7 @@ function MusicDetail(){
             {/* ... 기타 코드 */}
             <div className="topDetailContainer" style={{ background: 'linear-gradient(white, transparent)' }}>
                 <div className="albumArtworkContainer">
-                    <ColorHistogram imageUrl={trackInfo.album_image_300} alt="Album Artwork" className="albumArtwork"/>
+                    <ColorHistogram imageUrl={trackInfo.album_image_640} alt="Album Artwork" className="albumArtwork"/>
                 </div>
                 <div className="detailContainer">
                     {/* ... */}
