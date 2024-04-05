@@ -42,28 +42,28 @@ function Mypage() {
                 <div className='menu-item'>
                     <div className='menu-item-line'>
                         <h4>계정</h4>
-                        <div className="row"><BiPencil  style={{ backgroundColor: '#2b2a2a' }}/>기본 콘텐츠 <GoChevronRight className='rightIcon' /></div>
-                        <div className="row"><TbRestore style={{ backgroundColor: '#2b2a2a' }}/>플레이리스트 복구하기 <GoChevronRight className='rightIcon' /></div>
+                        <div><div className="row"><BiPencil  className='blackkan'/>기본 콘텐츠 <GoChevronRight className='rightIcon' /></div></div>
+                        <div className="row"><TbRestore className='blackkan'/>플레이리스트 복구하기 <GoChevronRight className='rightIcon' /></div>
                     </div>
                     <div className='menu-item-line'>
                         <h4>정액제</h4>
-                        <div className="row"><GrDiamond style={{ backgroundColor: '#2b2a2a' }}/>이용 가능한 요금제 <GoChevronRight className='rightIcon' /></div>
-                        <div className="row"><GrCurrency style={{ backgroundColor: '#2b2a2a' }}/>요금제 관리하기 <GoChevronRight className='rightIcon' /></div>
+                        <div className="row"><GrDiamond className='blackkan'/>이용 가능한 요금제 <GoChevronRight className='rightIcon' /></div>
+                        <div className="row"><GrCurrency className='blackkan'/>요금제 관리하기 <GoChevronRight className='rightIcon' /></div>
                     </div>
                     <div className='menu-item-line'>
                         <h4>결제</h4>
-                        <div className="row"><GrNotes style={{ backgroundColor: '#2b2a2a' }}/>주문 내역 <GoChevronRight className='rightIcon' /></div>
-                        <div className="row"><GoCreditCard style={{ backgroundColor: '#2b2a2a' }}/>저장된 결제카드 <GoChevronRight className='rightIcon' /></div>
-                        <div className="row"><AiFillTag style={{ backgroundColor: '#2b2a2a' }}/>사용하기 <GoChevronRight className='rightIcon' /></div>
+                        <div className="row"><GrNotes className='blackkan'/>주문 내역 <GoChevronRight className='rightIcon' /></div>
+                        <div className="row"><GoCreditCard className='blackkan'/>저장된 결제카드 <GoChevronRight className='rightIcon' /></div>
+                        <div className="row"><AiFillTag className='blackkan'/>사용하기 <GoChevronRight className='rightIcon' /></div>
                     </div>
                     <div className='menu-item-line'>
                         <h4>보안 및 개인정보 보호 <GoChevronRight /></h4>
-                        <div className="row" ><AiOutlineBars  style={{ backgroundColor: '#2b2a2a' }} />앱 관리 <GoChevronRight className='rightIcon' /></div>
-                        <div className="row"><FiBell style={{ backgroundColor: '#2b2a2a' }} />알림설정 <GoChevronRight className='rightIcon' /></div>
-                        <div className="row"><AiOutlineEye style={{ backgroundColor: '#2b2a2a' }} />개인정보 설정 <GoChevronRight className='rightIcon' /></div>
-                        <div className="row"><FiTrello style={{ backgroundColor: '#2b2a2a' }}/>로그인 방식 수정 <GoChevronRight className='rightIcon' /></div>
-                        <div className="row"><FiLock style={{ backgroundColor: '#2b2a2a' }}/>기기 비밀번호 설정하기 <GoChevronRight className='rightIcon' /></div>
-                        <div className="row"><AiOutlineApi style={{ backgroundColor: '#2b2a2a' }}/>어디서든 로그아웃하기 <GoChevronRight className='rightIcon' /></div>
+                        <div className="row" ><AiOutlineBars  className='blackkan' />앱 관리 <GoChevronRight className='rightIcon' /></div>
+                        <div className="row"><FiBell className='blackkan' />알림설정 <GoChevronRight className='rightIcon' /></div>
+                        <div className="row"><AiOutlineEye className='blackkan' />개인정보 설정 <GoChevronRight className='rightIcon' /></div>
+                        <div className="row"><FiTrello className='blackkan'/>로그인 방식 수정 <GoChevronRight className='rightIcon' /></div>
+                        <div className="row"><FiLock className='blackkan'/>기기 비밀번호 설정하기 <GoChevronRight className='rightIcon' /></div>
+                        <div className="row"><AiOutlineApi className='blackkan'/>어디서든 로그아웃하기 <GoChevronRight className='rightIcon' /></div>
                     </div>
                     <div className='menu-item-line'>
                         <h4>도움말</h4>

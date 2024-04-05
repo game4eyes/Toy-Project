@@ -49,16 +49,35 @@
 
 
 .menu-item-line .row {
-    display: flex;
-    
+    display: grid;
+    grid-gap: var(--encore-spacing-tighter-2, 8px) var(--encore-spacing-tighter, 12px);
+    grid-template-columns: auto 1fr;
+
 }
+.menu-item-line .row:hover{
+    background-color: #f1eaea;
+    --animation-speed: 300ms;
+    --animation-ease: ease;
+    --bg-inset-change-press: -4px;
+    cursor: pointer;
+}
+.boxanime {
+    position: absolute;
+    z-index: 0;
+    inset: 0px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+}
+
 .menu-item .row svg{
     padding: 3px;
    
     width: 1em;
     height: 1em;
     border-radius: 3px;
-    margin-right: 10px;
+    
     
     
 }
@@ -66,10 +85,14 @@
     background: #191818;
     border-radius: 10px;
     margin:  10px;
-    padding: 15px;
+    margin-bottom: 24px;
 }
 .menu-item-line h4{
+    margin-bottom: 0px;
     margin-top: 0px;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 15px;
 }
 .footer {
   margin-top: auto; /* 푸터를 상단으로부터 자동으로 마진을 주어 하단에 위치시킵니다. */
@@ -80,3 +103,7 @@
     margin-left: auto;
     
 }
+.blackkan{
+    background-color: #31303056;
+  }
+  
