@@ -6,7 +6,6 @@
 }
 
 .mypage-menu-container {
-
     width: 800px;
     height: 100%;
     /* 필요에 따라 다른 스타일 추가 */
@@ -45,22 +44,43 @@
     margin:  10px;
     padding: 15px;
     margin-left: 0px;
-}
+    cursor: pointer;
 
+    transition: background-color var(--animation-speed, 500ms) var(--animation-ease, ease);
+}
+.edit-profile-box:hover,
+.update-credit-card-box:hover {
+    background: #303030;
+    
+}
 
 .menu-item-line .row {
-    display: grid;
-    grid-gap: var(--encore-spacing-tighter-2, 8px) var(--encore-spacing-tighter, 12px);
-    grid-template-columns: auto 1fr;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-left: 10px;
+
+  transition: background-color var(--animation-speed, 500ms) var(--animation-ease, ease);
 
 }
-.menu-item-line .row:hover{
-    background-color: #f1eaea;
-    --animation-speed: 300ms;
-    --animation-ease: ease;
-    --bg-inset-change-press: -4px;
+
+
+.menu-item-line .row:hover {
+    background-color: #4e4e4e;
     cursor: pointer;
-}
+    --bg-inset-change-press: -4px;
+  }
+
+  .menu-item-line .row .rightIcon {
+    margin-left: auto;
+    transition: transform var(--animation-speed, 300ms) var(--animation-ease, ease);
+  }
+  
+  .menu-item-line .row:hover .rightIcon {
+    transform: translateX(var(--bg-inset-change-press, -6px));
+  }
 .boxanime {
     position: absolute;
     z-index: 0;
@@ -72,8 +92,8 @@
 }
 
 .menu-item .row svg{
+    
     padding: 3px;
-   
     width: 1em;
     height: 1em;
     border-radius: 3px;
@@ -86,6 +106,7 @@
     border-radius: 10px;
     margin:  10px;
     margin-bottom: 24px;
+    padding-bottom: 15px;
 }
 .menu-item-line h4{
     margin-bottom: 0px;
