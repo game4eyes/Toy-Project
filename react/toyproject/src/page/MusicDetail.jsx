@@ -6,6 +6,7 @@ import MusicDetailArtist from "../component/MusicDetailArtist.jsx";
 import './css/MusicDetail.css';
 import ColorHistogram from '../component/ColorHistogram';
 
+
 function MusicDetail(){
     const {trackId} = useParams();
     const [trackInfo, setTrackInfo] = useState(null);
@@ -23,7 +24,10 @@ function MusicDetail(){
                 // 요청이 실패하면, 오류 처리
                 console.error('There was an error!', error);
             });
-    }, []);
+    }, [trackId]);
+    useEffect(() => {
+        console.log(trackInfo)
+    }, [trackInfo]);
 
     // 로딩 상태 처리
     if (!trackInfo) {
@@ -63,7 +67,7 @@ function MusicDetail(){
                 <div className="playButton">재생</div>
             </div>
             <div className="musicDetailArtist">
-                {trackInfo.artist_Simplifieds.map((artist, index) => (
+                {trackInfo.artist_Simplifieds.map((artist) => (
                     <React.Fragment key={artist.id}>
                         <MusicDetailArtist id={artist.id} name={artist.name}/>
                     </React.Fragment>
