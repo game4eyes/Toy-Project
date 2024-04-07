@@ -1,25 +1,27 @@
 import React, { useState } from 'react';
+import '../page/css/SignupCommon.css';
 
-const EmailSignup = ({ nextStep }) => {
+const EmailSignup = ({ onNext }) => {
   const [email, setEmail] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // 이메일 유효성 검사 및 서버로 데이터 전송 로직 추가
-    nextStep();
+    onNext();
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="email">이메일</label>
+    <form onSubmit={handleSubmit} className="signup-form">
+      <label htmlFor="email" className="form-label">이메일 주소</label>
       <input
         type="email"
         id="email"
+        className="input-field"
+        placeholder="name@domain.com"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
       />
-      <button type="submit">다음</button>
+      <button type="submit" className="button-next">다음</button>
     </form>
   );
 };

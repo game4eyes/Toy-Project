@@ -1,0 +1,233 @@
+.signup-container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* 전체 화면 너비 사용 */
+  max-width: 400px; /* 컨테이너 최대 너비 설정 */
+  height : 600px;
+  margin: 0 auto; /* 중앙 정렬 */
+  padding: 40px 20px; /* 내부 여백 설정 */
+  border-radius: 10px;
+  background-color: #000;
+  color: white;
+  box-sizing: border-box;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 중앙 정렬 */
+}
+
+.signup-title {
+  margin-bottom: 40px; /* 조금 더 적절한 간격 조정 */
+  text-align: center;
+  font-size: 30px; /* 조금 더 작은 크기로 조정 */
+}
+
+.signup-form {
+  width: 100%; /* 폼의 너비를 컨테이너 너비에 맞춤 */
+  max-width: 300px; /* 최대 너비 설정 */
+  margin-bottom: 2px;
+}
+
+.signup-form label {
+  margin-bottom: 2px;
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="password"] {
+  padding: 11px;
+  margin-top : 0;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #242424;
+  background-color: #f9f9f9;
+}
+
+.signup-form input[type="email"] {
+  margin-top: 0; /* 입력 필드 상단 여백 제거 */
+}
+
+
+.signup-link {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.signup-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+
+/* 뒤로가기 버튼을 위한 컨테이너 */
+.back-button-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10; /* 충분히 높은 z-index 값으로 설정하여 겹치는 내용이 있을 때 상단에 배치 */
+}
+.back-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+.back-button:hover {
+  color: #aaa; /* 호버 시 색상 변경 */
+}
+
+.password-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.password-header .password-label {
+  font-size: 24px; /* 텍스트 크기를 조정합니다. */
+}
+
+.label-email {
+  display: block;
+  margin-bottom: 5px; /* 이 값을 줄이면 텍스트와 입력 필드 사이 간격이 줄어듭니다. */
+}
+.input-email {
+  margin-top: 5px; /* 필요하다면 입력 필드 위의 공간 줄임 */
+}
+
+/* 이메일과 비밀번호 입력 필드 스타일 */
+/* input-field 여기*/
+.input-field {
+  max-width: 100%;
+  width: 80%; 
+  padding: 10px;
+  margin-bottom: 10px; /* '다음' 버튼과의 간격 */
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #242424;
+  background-color: #f9f9f9;
+}
+.input-field {
+  padding: 10px; /* 필요한 padding 값 설정 */
+  border: 1px solid #ccc; /* border 설정 */
+  border-radius: 3px; /* 둥근 모서리 설정 */
+}
+
+.button-next {
+  width: 100%; /* 너비는 입력 필드와 동일하게 */
+  padding: 15px 0; /* 상하 패딩, 좌우는 0 */
+  margin-bottom: 20px; /* 하단 여백 */
+  background-color: #007bff; /* 배경색 */
+  color: white; /* 글자색 */
+  border: none; /* 테두리 없음 */
+  border-radius: 3px; /* 둥근 모서리 */
+  cursor: pointer; /* 커서 포인터로 변경 */
+}
+.button-next:hover {
+  background-color: #0056b3; /* 호버 상태일 때 배경색 */
+}
+
+
+
+/* UserInfoSignup 컴포넌트 스타일링 */
+.gender-title {
+  margin-left: 0;
+}
+.gender-selection-container {
+  margin-left: 0; /* 들여쓰기 없애기 */
+}
+.user-info-label {
+  font-size: 1rem; /* 텍스트의 글자 크기를 1rem으로 조절 */
+  display: block; /* 라벨을 블록 요소로 만듦 */
+  margin-bottom: 0.5rem; /* 간격을 0.5rem으로 조절 */
+}
+.gender-option {
+  display: inline-block; /* 옵션들을 옆으로 나열 */
+  margin-right: 10px; /* 옵션 간 간격 설정 */
+}
+.gender-option:nth-of-type(n+4) {
+  width: 100%;
+  margin-right: 0;
+}
+/* 생년월일 입력 필드 */
+.birthday-field {
+  display: flex; /* 플렉스 컨테이너로 만듦 */
+  gap: 0.5rem; /* 요소 사이의 간격을 0.5rem으로 설정 */
+}
+
+/* 성별 선택 라디오 버튼 스타일링 */
+.gender-selection {
+  display: flex; /* 플렉스 컨테이너로 만듦 */
+  gap: 1rem 3rem; /* 요소 사이의 간격을 1rem으로 설정 */
+  margin-top: 2rem; /* 상단 여백 추가 */
+  width : 100%;
+  justify-content:flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  border: none;
+}
+
+.birthday-field {
+  justify-content: center;
+  display: flex;
+  gap: 0.5rem; /* 입력 필드 사이의 간격을 설정 */
+}
+.input-year {
+  max-width: 150px; /* '년' 입력 필드의 최대 너비 설정 */
+  gap: 1rem;
+}
+
+.input-month,
+.input-day {
+  max-width: 70px; /* '월'과 '일' 입력 필드의 최대 너비 설정 */
+  height: 30px;
+  gap: 0.5rem;
+}
+
+.input-year,
+.input-month,
+.input-day {
+    width: 100%; /* 필드의 너비를 컨테이너에 맞춤 */
+  margin-bottom: 10px; /* 다음 필드와의 간격 */
+}
+
+/* 이름 입력 필드 */
+.input-name {
+  flex :1;
+  margin-bottom: 10px; /* 다음 필드와의 간격 */
+  margin-right: 10px;
+}
+
+/* 생년월일 입력 필드를 감싸는 컨테이너 */
+.birthday-field {
+  display: flex;
+  gap: 10px; /* 필드 사이의 간격 */
+  margin-bottom: 10px; /* 다음 필드와의 간격 */
+}
+
+/* 연도 입력 필드 */
+.input-year {
+  flex: 2; /* 생년월일 필드 중 '년'이 가장 넓게 설정 */
+}
+
+/* 월 입력 필드 */
+.input-month {
+  flex: 1; /* '월'과 '일' 필드는 더 작게 설정 */
+}
+
+/* 일 입력 필드 */
+.input-day {
+  flex: 1; /* '월'과 '일' 필드는 더 작게 설정 */
+}
+

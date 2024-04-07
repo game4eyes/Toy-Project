@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
+import '../page/css/SignupCommon.css';
 
-const PreferencesSignup = ({ prevStep }) => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // 사용자 선호도 데이터를 서버로 전송하는 로직 추가
-    // 회원가입 프로세스 완료 로직 추가
-  };
-
+const PreferencesSignup = ({ onNext, onPrev }) => {
   return (
-    <form onSubmit={handleSubmit}>
-      <label>사용자 선호 설정</label>
-      {/* 선호도 관련 입력 필드 추가 */}
-      <button type="button" onClick={prevStep}>이전</button>
-      <button type="submit">가입 완료</button>
-    </form>
+    <div className="signup-container">
+      <button className="back-button" onClick={onPrev}>&lt;</button>
+          <form onSubmit={(e) => { e.preventDefault(); onNext(); }}>
+            <label>
+              <input type="checkbox" />
+              옵션 1
+            </label>
+            <label>
+              <input type="checkbox" />
+              옵션 2
+            </label>
+            <button type="submit">가입 완료</button>
+          </form>
+    </div>
   );
 };
 

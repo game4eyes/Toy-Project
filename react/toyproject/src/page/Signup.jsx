@@ -1,35 +1,61 @@
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-
-// 회원가입 단계별 컴포넌트를 임포트합니다.
+import React, { useState } from 'react';
 import EmailSignup from '../component/EmailSignup';
 import PasswordSignup from '../component/PasswordSignup';
 import UserInfoSignup from '../component/UserInfoSignup';
 import PreferencesSignup from '../component/PreferencesSignup';
+import ProgressIndicator from './ProgressIndicator';
+import { useNavigate } from 'react-router-dom';
+
+const totalSteps = 4; // 여기에 전체 단계 수를 설정합니다.
 
 const Signup = () => {
-  // 현재 단계를 상태로 관리합니다.
+
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    navigate('/LoginPage'); // 로그인 페이지로 이동
+  };
+
   const [currentStep, setCurrentStep] = useState(1);
 
-  // 다음 단계로 이동하는 함수
   const nextStep = () => {
-    setCurrentStep(currentStep + 1);
+    setCurrentStep(prev => prev + 1);
   };
 
-  // 이전 단계로 이동하는 함수
   const prevStep = () => {
-    setCurrentStep(currentStep - 1);
+    setCurrentStep(prev => (prev > 1 ? prev - 1 : prev));
   };
+
+  let StepComponent;
+  
+  switch (currentStep) {
+    case 1:
+      StepComponent = <EmailSignup onNext={nextStep} onPrev={prevStep}/>;
+      break;
+    case 2:
+      StepComponent = <PasswordSignup onNext={nextStep} onPrev={prevStep}/>;
+      break;
+    case 3:
+      StepComponent = <UserInfoSignup onNext={nextStep} onPrev={prevStep} />;
+      break;
+    case 4:
+      StepComponent = <PreferencesSignup onNext={nextStep} onPrev={prevStep} />;
+      break;
+      default:
+        StepComponent = (
+          <>
+            <div>도비는 자유에요!!!!!!!!!!!!!!!!!!!!</div>
+            <button onClick={handleLogin}>로그인</button>
+          </>
+        );
+        break;
+  }
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/signup/step-1" element={<EmailSignup nextStep={nextStep} />} />
-        <Route path="/signup/step-2" element={currentStep >= 2 ? <PasswordSignup nextStep={nextStep} prevStep={prevStep} /> : <Navigate replace to="/signup/step-1" />} />
-        <Route path="/signup/step-3" element={currentStep >= 3 ? <UserInfoSignup nextStep={nextStep} prevStep={prevStep} /> : <Navigate replace to="/signup/step-1" />} />
-        <Route path="/signup/step-4" element={currentStep >= 4 ? <PreferencesSignup prevStep={prevStep} /> : <Navigate replace to="/signup/step-1" />} />
-        <Route path="/signup" element={<Navigate replace to="/signup/step-1" />} />
-      </Routes>
-    </Router>
+    <div className="signup-container">
+      <ProgressIndicator currentStep={currentStep} totalSteps={totalSteps} />
+      {StepComponent}
+    </div>
   );
 };
 

@@ -1,27 +1,24 @@
 import React, { useState } from 'react';
+import '../page/css/SignupCommon.css';
 
-const PasswordSignup = ({ nextStep, prevStep }) => {
-  const [password, setPassword] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // 비밀번호 유효성 검사 및 서버로 데이터 전송 로직 추가
-    nextStep();
-  };
-
+const PasswordSignup = ({ onNext, onPrev }) => {
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="password">비밀번호</label>
-      <input
-        type="password"
-        id="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        required
-      />
-      <button type="button" onClick={prevStep}>이전</button>
-      <button type="submit">다음</button>
-    </form>
+    <div className="signup-container">
+      <div className="back-button-container">
+        <button className="back-button" onClick={onPrev}>&lt;</button>
+      </div>
+      <form onSubmit={(e) => { e.preventDefault(); onNext(); }}>
+        <label htmlFor="password" className="form-label">비밀번호</label>
+        <input
+          type="password"
+          id="password"
+          className="input-field"
+          placeholder="비밀번호"
+          required
+        />
+        <button type="submit" className="button-next">다음</button>
+      </form>
+    </div>
   );
 };
 
