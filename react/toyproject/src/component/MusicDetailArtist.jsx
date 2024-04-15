@@ -12,7 +12,7 @@ function MusicDetailArtist(props){
             .catch(error => {
                 console.log('There was an error!', error);
             });
-    },[]);
+    },[props.id]);
     useEffect(() => {
         console.log(artistDetails)
     }, [artistDetails]);
